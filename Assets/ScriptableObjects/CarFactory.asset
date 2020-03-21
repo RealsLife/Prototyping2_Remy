@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e49a97766b37c47bda1b46665aea4d, type: 3}
+  m_Name: CarFactory
+  m_EditorClassIdentifier: 
+  CarPrefabs:
+  - {fileID: 888905155230820866, guid: 64b2efec5433cca4f8ea585cf1ca909a, type: 3}
+  - {fileID: 7651938306022651079, guid: 748681b163d60ab4bb9cb2d38f556719, type: 3}
+  - {fileID: 1286799711670072715, guid: b8a0221a98d933d42b701bec851d3d23, type: 3}
+  MyColorGenerator: {fileID: 11400000, guid: 65c869cc59fabf545aa17247355f25fe, type: 2}
