@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class UILevelEndFeedback : MonoBehaviour
 {
-    public Text FeedbackTextField;
+    //have a timer run of 5 seconds to enable a button to close this menu
+    public Text PositiveTextField;
+    public Text NegativeTextField;
+    public Text ScoreTextField;
     
-    public void UpdateFeedbackTextField(string feedback)
+    public void UpdateFeedbackTextField(string feedbackPositive, string feedbackNegative, int playerScore)
     {
-        FeedbackTextField.text = feedback;
+        PositiveTextField.text = feedbackPositive;
+        NegativeTextField.text = feedbackNegative;
+        ScoreTextField.text = playerScore + "/10";
     }
 }

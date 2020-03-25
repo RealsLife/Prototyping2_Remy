@@ -18,15 +18,17 @@ public class LevelEndDirector : MonoBehaviour
 
     private void LevelEndFeedback()
     {
-        string packageFeedback = "";
+        string feedbackPositive = "";
+        string feedbackNegative = "";
 
         foreach(SubjectHandler subjectHandler in SubjectHandlers)
         {
-            packageFeedback += subjectHandler.RequestFinalVerdict(ref PlayerScore);
+            feedbackPositive += subjectHandler.Positives;
+            feedbackNegative += subjectHandler.Negatives;
+            PlayerScore = Mathf.Max(PlayerScore - subjectHandler.ScorePenalty, 0);
         }
 
-        packageFeedback += "\nThe player's score in the level is: " + PlayerScore;
-        UILevelEndFeedback.UpdateFeedbackTextField(packageFeedback);
+        UILevelEndFeedback.UpdateFeedbackTextField(feedbackPositive, feedbackNegative, PlayerScore);
         UILevelEndFeedback.gameObject.SetActive(true);
     }
 }

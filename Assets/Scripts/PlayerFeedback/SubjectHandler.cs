@@ -4,26 +4,17 @@ using UnityEngine;
 
 public class SubjectHandler : MonoBehaviour
 {
-    [SerializeField]
-    private string _title;
+    private List<string> _positives = new List<string>();
+    private List<string> _negatives = new List<string>();
 
-    private List<string> _positives = new List<string> { "<b>Goed:</b> " };
-    private List<string> _negatives = new List<string> { "<b>Slecht:</b> " };
-
-    private bool _isSubjectFinished;
+    public string Positives { get { return StringListToString(_positives); } }
+    public string Negatives { get { return StringListToString(_negatives); } }
 
     private int _scorePenalty = 0;
 
+    public int ScorePenalty { get { return _scorePenalty; } }
+
     public void TriggerVerdict(SubjectPiece piece)
-    {
-        if(!_isSubjectFinished)//can still be changed, for example if the player runs back and does the exercise again
-            AnalyzePiece(piece);
-
-        if (piece.IsEndPiece)
-            _isSubjectFinished = true;
-    }
-
-    private void AnalyzePiece(SubjectPiece piece)
     {
         if (piece.Judgement == Verdict.Right)
         {
@@ -39,35 +30,11 @@ public class SubjectHandler : MonoBehaviour
         }
     }
 
-    public string RequestFinalVerdict(ref int playerScore)
+    private string StringListToString(List<string> stringList)
     {
-        string package = "<b>" + _title +"</b>\n";
-
-        StringListToString(ref _positives, ref package);
-        StringListToString(ref _negatives, ref package);
-
-        package += "\n";
-
-        playerScore -= _scorePenalty;
-
-        return package;
-
-        /*
-        if(_isSubjectFinished)
-        {
-
-            //string = list to string
-            //return that string
-        }
-        else
-        {
-            
-        }*/
-    }
-
-    private void StringListToString(ref List<string> stringList, ref string package)
-    {
+        string package = "";
         foreach (string line in stringList)
             package += line + "\n";
+        return package;
     }
 }
