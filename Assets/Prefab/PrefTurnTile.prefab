@@ -237,7 +237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3290630986245811606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.21999997, z: 0}
+  m_LocalPosition: {x: 0, y: 0.22999999, z: -0.037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2995346976574550607}
@@ -258,10 +258,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -0.2753725, y: 0.0013324469, z: -0.20517285}
-      - {x: 0.43104362, y: -0.07368441, z: -0.20947571}
-      - {x: 0.115382195, y: -0.028420746, z: -0.191843}
-      - {x: 0.15539074, y: 0.05130434, z: 0.31308264}
+      - {x: -0.31362152, y: 0.035439253, z: -0.17187205}
+      - {x: 0.37098217, y: 0.03543925, z: -0.2609365}
+      - {x: 0.115382195, y: 0.019574158, z: 0}
+      - {x: 0.15539074, y: 0.03543925, z: 0.31308264}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -273,9 +273,9 @@ MonoBehaviour:
       perAnchorNormalsAngle:
       - 0
       - 0
-      globalNormalsAngle: 0
+      globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 1
+    vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -292,7 +292,7 @@ MonoBehaviour:
     showPathOptions: 1
     showVertexPathDisplayOptions: 0
     showVertexPathOptions: 1
-    showNormals: 0
+    showNormals: 1
     showNormalsHelpInfo: 0
     tabIndex: 0
   initialized: 1
@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 6735321866369953535}
   - component: {fileID: 1076744961277409446}
   - component: {fileID: 7189479212393871867}
+  - component: {fileID: 5246077097426002872}
   m_Layer: 0
   m_Name: PrefTurnTile
   m_TagString: Untagged
@@ -415,6 +416,23 @@ MonoBehaviour:
   _randomActiveTileStreetDirection: 0
   DirectionFromMainTile: 0
   TileIsEnvironmentTile: 0
+--- !u!114 &5246077097426002872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587112348941848296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd575d1e843d2aa4cb58b4dc8c8f58c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PathCreator:
+  - {fileID: 3804488076973134690}
+  IsZebrapadEnabled: 1
+  prefabZebrapad: {fileID: 3808365586178544251, guid: 88e20447ed1542b4eb967f8aa01c0877,
+    type: 3}
 --- !u!1 &3663822394106248447
 GameObject:
   m_ObjectHideFlags: 0

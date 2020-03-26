@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 3474599181454252022}
   - component: {fileID: 7183724988459303343}
   - component: {fileID: 2920796599622922299}
+  - component: {fileID: 1186803990236940592}
   m_Layer: 0
   m_Name: PrefCrossSectionTile
   m_TagString: Untagged
@@ -589,6 +590,26 @@ MonoBehaviour:
   _randomActiveTileStreetDirection: 0
   DirectionFromMainTile: 0
   TileIsEnvironmentTile: 0
+--- !u!114 &1186803990236940592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6667317202025183201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd575d1e843d2aa4cb58b4dc8c8f58c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PathCreator:
+  - {fileID: 2353267071608411209}
+  - {fileID: 7085965584946216001}
+  - {fileID: 8496579284840255116}
+  - {fileID: 576031003386309274}
+  IsZebrapadEnabled: 1
+  prefabZebrapad: {fileID: 3808365586178544251, guid: 88e20447ed1542b4eb967f8aa01c0877,
+    type: 3}
 --- !u!1 &7304108134663755494
 GameObject:
   m_ObjectHideFlags: 0
