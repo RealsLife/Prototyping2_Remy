@@ -4,18 +4,15 @@ using UnityEngine;
 
 public enum Verdict
 {
-    Right, Wrong
+    Positive, Mild, Serious
 }
 
 public class SubjectPiece : MonoBehaviour
 {
     public SubjectHandler Handler;
 
-    public Verdict Judgement = Verdict.Wrong;
+    public Verdict Judgement = Verdict.Positive;
     public string Description;
-    public int ScorePenalty = 0;
-
-    public bool IsEndPiece;
 
     private void OnTriggerEnter(Collider other)
     {

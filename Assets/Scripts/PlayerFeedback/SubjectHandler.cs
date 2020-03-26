@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,20 +15,32 @@ public class SubjectHandler : MonoBehaviour
 
     public int ScorePenalty { get { return _scorePenalty; } }
 
+    public UIPopup UIPopup;
+
     public void TriggerVerdict(SubjectPiece piece)
     {
-        if (piece.Judgement == Verdict.Right)
+        if (piece.Judgement == Verdict.Positive)
         {
             if (!_positives.Contains(piece.Description))
                 _positives.Add(piece.Description);
         }
-        else if (piece.Judgement == Verdict.Wrong)
+        else if (piece.Judgement == Verdict.Mild || piece.Judgement == Verdict.Serious)
         {
             if (!_negatives.Contains(piece.Description))
                 _negatives.Add(piece.Description);
 
-            _scorePenalty += piece.ScorePenalty;
+            AdjustScore(piece);
         }
+
+        UIPopup.PopFeedback(piece);
+    }
+
+    private void AdjustScore(SubjectPiece piece)
+    {
+        if (piece.Judgement == Verdict.Mild)
+            _scorePenalty -= 3;
+        else if (piece.Judgement == Verdict.Serious)
+            _scorePenalty -= 6;
     }
 
     private string StringListToString(List<string> stringList)

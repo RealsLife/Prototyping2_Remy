@@ -25,7 +25,8 @@ public class LevelEndDirector : MonoBehaviour
         {
             feedbackPositive += subjectHandler.Positives;
             feedbackNegative += subjectHandler.Negatives;
-            PlayerScore = Mathf.Max(PlayerScore - subjectHandler.ScorePenalty, 0);
+            PlayerScore += subjectHandler.ScorePenalty;
+            PlayerScore = Mathf.Max(PlayerScore, 0);
         }
 
         UILevelEndFeedback.UpdateFeedbackTextField(feedbackPositive, feedbackNegative, PlayerScore);
