@@ -1,5 +1,89 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &536245780646200954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8147235064590119928}
+  - component: {fileID: 9105941072497141728}
+  m_Layer: 0
+  m_Name: Street
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8147235064590119928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536245780646200954}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3997961049809264482}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9105941072497141728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536245780646200954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorData:
+    _bezierPath:
+      points:
+      - {x: 0.0066720247, y: 0.20697016, z: -0.41710126}
+      - {x: 0.0064214803, y: 0.20697017, z: -0.21020052}
+      - {x: 0.0059203915, y: 0.20697019, z: 0.20360097}
+      - {x: 0.005669847, y: 0.2069702, z: 0.41050172}
+      isClosed: 0
+      space: 0
+      controlMode: 3
+      autoControlLength: 0.3
+      boundsUpToDate: 0
+      bounds:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 2, y: 0.14433756, z: 0}
+      perAnchorNormalsAngle:
+      - 0
+      - 0
+      globalNormalsAngle: 90
+      flipNormals: 0
+    vertexPathUpToDate: 1
+    vertexPathMaxAngleError: 0.3
+    vertexPathMinVertexSpacing: 0.01
+    showTransformTool: 1
+    showPathBounds: 0
+    showPerSegmentBounds: 0
+    displayAnchorPoints: 1
+    displayControlPoints: 1
+    bezierHandleScale: 1
+    globalDisplaySettingsFoldout: 1
+    keepConstantHandleSize: 0
+    showNormalsInVertexMode: 0
+    showBezierPathInVertexMode: 0
+    showDisplayOptions: 1
+    showPathOptions: 1
+    showVertexPathDisplayOptions: 0
+    showVertexPathOptions: 1
+    showNormals: 1
+    showNormalsHelpInfo: 0
+    tabIndex: 0
+  initialized: 1
 --- !u!1 &2228217933782913217
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +172,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.09365999, y: 17.46014, z: 1}
   m_Center: {x: 0.05317008, y: 8.23007, z: 0}
+--- !u!1 &3366285024476419117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3997961049809264482}
+  m_Layer: 0
+  m_Name: Streets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3997961049809264482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3366285024476419117}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 3.058946, z: 1}
+  m_Children:
+  - {fileID: 8147235064590119928}
+  m_Father: {fileID: 5331829561943544065}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3803185400554963982
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +294,7 @@ GameObject:
   - component: {fileID: 6019984966404870471}
   - component: {fileID: 772087975659294}
   - component: {fileID: 5854069230042393479}
+  - component: {fileID: 4087099014058784755}
   m_Layer: 0
   m_Name: PrefStraightStreet
   m_TagString: Untagged
@@ -199,6 +315,7 @@ Transform:
   m_Children:
   - {fileID: 3053782279203600936}
   - {fileID: 4223893757059171282}
+  - {fileID: 3997961049809264482}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -276,17 +393,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _directions:
     LeftEnabled: 0
-    LeftCollider: {fileID: 0}
     RightEnabled: 0
-    RightCollider: {fileID: 0}
     UpEnabled: 1
-    UpCollider: {fileID: 0}
     DownEnabled: 1
-    DownCollider: {fileID: 0}
   ActivatedDirections: 
   _randomActiveTileStreetDirection: 0
   DirectionFromMainTile: 0
   TileIsEnvironmentTile: 0
+--- !u!114 &4087099014058784755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4554291849941971280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd575d1e843d2aa4cb58b4dc8c8f58c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PathCreator:
+  - {fileID: 9105941072497141728}
+  IsZebrapadEnabled: 1
+  prefabZebrapad: {fileID: 3808365586178544251, guid: 88e20447ed1542b4eb967f8aa01c0877,
+    type: 3}
 --- !u!1 &5617518330290565636
 GameObject:
   m_ObjectHideFlags: 0
