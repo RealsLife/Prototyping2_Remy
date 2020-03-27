@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private string _mouseXInputName, _mouseYInputName;
+    [SerializeField] private string _mouseXInputName;
     [SerializeField] private float _mouseSensitivity;
 
     [SerializeField] private Transform _playerBody;
@@ -31,24 +31,18 @@ public class CameraController : MonoBehaviour
     private void CameraRotation()
     {
         float mouseX = Input.GetAxis(_mouseXInputName) * _mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis(_mouseYInputName) * _mouseSensitivity * Time.deltaTime;
-
-        _xAxisClamp += mouseY;
 
         if (_xAxisClamp > 90.0f)
         {
             _xAxisClamp = 90.0f;
-            mouseY = 0.0f;
             ClampXAxisRotationToValue(270.0f);
         }
         else if (_xAxisClamp < -90.0f)
         {
             _xAxisClamp = -90.0f;
-            mouseY = 0.0f;
             ClampXAxisRotationToValue(90.0f);
         }
 
-        transform.Rotate(Vector3.left * mouseY);
         _playerBody.Rotate(Vector3.up * mouseX);
     }
 

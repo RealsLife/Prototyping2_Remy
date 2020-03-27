@@ -10,13 +10,6 @@ public class CharacterController : MonoBehaviour
 
     private UnityEngine.CharacterController charController;
 
-    [SerializeField] private AnimationCurve _jumpFallOff;
-    [SerializeField] private float _jumpMultiplier;
-    [SerializeField] private KeyCode _jumpKey;
-
-
-    private bool isJumping;
-
     private void Awake()
     {
         charController = GetComponent<UnityEngine.CharacterController>();
@@ -39,17 +32,6 @@ public class CharacterController : MonoBehaviour
 
         charController.SimpleMove(forwardMovement + rightMovement);
 
-        JumpInput();
-
-    }
-
-    private void JumpInput()
-    {
-        if (Input.GetKeyDown(_jumpKey) && !isJumping)
-        {
-            isJumping = true;
-            StartCoroutine(JumpEvent());         
-        }
     }
 
     private IEnumerator JumpEvent()
@@ -58,14 +40,12 @@ public class CharacterController : MonoBehaviour
         float timeInAir = 0.0f;
 
         do
-        {           
-            float jumpForce = _jumpFallOff.Evaluate(timeInAir);
-            charController.Move(Vector3.up * _jumpMultiplier * Time.deltaTime);
+        {                      
+            charController.Move(Vector3.up  * Time.deltaTime);
             timeInAir += Time.deltaTime;
             yield return null;
         } while (!charController.isGrounded && charController.collisionFlags != CollisionFlags.Above);
 
         charController.slopeLimit = 45.0f;
-        isJumping = false;
     }
 }
