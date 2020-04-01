@@ -415,7 +415,7 @@ MonoBehaviour:
   PathCreator:
   - {fileID: 9105941072497141728}
   IsZebrapadEnabled: 1
-  prefabZebrapad: {fileID: 3808365586178544251, guid: 88e20447ed1542b4eb967f8aa01c0877,
+  prefabZebrapad: {fileID: 3307674419268839603, guid: 75c5851d29fe25d43a7526e01eef47a1,
     type: 3}
 --- !u!1 &5617518330290565636
 GameObject:

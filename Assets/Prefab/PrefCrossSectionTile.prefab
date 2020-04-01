@@ -608,7 +608,7 @@ MonoBehaviour:
   - {fileID: 8496579284840255116}
   - {fileID: 576031003386309274}
   IsZebrapadEnabled: 1
-  prefabZebrapad: {fileID: 3307674419268839603, guid: e4e8a875995534b498ab9ad46c038d13,
+  prefabZebrapad: {fileID: 3307674419268839603, guid: 75c5851d29fe25d43a7526e01eef47a1,
     type: 3}
 --- !u!1 &7304108134663755494
 GameObject:

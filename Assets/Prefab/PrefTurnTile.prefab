@@ -275,7 +275,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -431,7 +431,7 @@ MonoBehaviour:
   PathCreator:
   - {fileID: 3804488076973134690}
   IsZebrapadEnabled: 1
-  prefabZebrapad: {fileID: 3808365586178544251, guid: 88e20447ed1542b4eb967f8aa01c0877,
+  prefabZebrapad: {fileID: 3307674419268839603, guid: 75c5851d29fe25d43a7526e01eef47a1,
     type: 3}
 --- !u!1 &3663822394106248447
 GameObject:
