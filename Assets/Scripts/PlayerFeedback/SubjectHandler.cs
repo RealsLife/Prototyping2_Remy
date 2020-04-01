@@ -15,7 +15,13 @@ public class SubjectHandler : MonoBehaviour
 
     public int ScorePenalty { get { return _scorePenalty; } }
 
+    [HideInInspector]
     public UIPopup UIPopup;
+
+    private void Start()
+    {
+        UIPopup = FindObjectOfType<UIPopup>();
+    }
 
     public void TriggerVerdict(SubjectPiece piece)
     {

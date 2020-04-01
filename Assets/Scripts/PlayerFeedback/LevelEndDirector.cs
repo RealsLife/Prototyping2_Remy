@@ -1,27 +1,50 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelEndDirector : MonoBehaviour
 {
-    public List<SubjectHandler> SubjectHandlers;
+    private SubjectHandler[] _subjectHandlers;
 
     public int PlayerScore = 10;//this has to be moved to playerstats
 
     public UILevelEndFeedback UILevelEndFeedback;
 
-    private void Update()
+    public UIPopup UIPopup;
+
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-            LevelEndFeedback();
+        //when a new tile is manually generated, feedback isn't added because it hasn't done FindChallenges() again
+        FindChallenges();
+        AssignUIPopupToChallenges();
     }
 
-    private void LevelEndFeedback()
+    private void FindChallenges()
+    {
+        _subjectHandlers = FindObjectsOfType<SubjectHandler>();
+    }
+
+    private void AssignUIPopupToChallenges()
+    {
+        foreach (SubjectHandler subjectHandler in _subjectHandlers)
+        {
+            subjectHandler.UIPopup = UIPopup;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+            GenerateFeedback();
+    }
+
+    private void GenerateFeedback()
     {
         string feedbackPositive = "";
         string feedbackNegative = "";
 
-        foreach(SubjectHandler subjectHandler in SubjectHandlers)
+        foreach(SubjectHandler subjectHandler in _subjectHandlers)
         {
             feedbackPositive += subjectHandler.Positives;
             feedbackNegative += subjectHandler.Negatives;

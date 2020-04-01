@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6547106733795491246}
   - component: {fileID: 713670499120005463}
   - component: {fileID: 4578912868436336387}
+  - component: {fileID: 8731213707327028698}
   m_Layer: 0
   m_Name: Vehicle_Truck
   m_TagString: Untagged
@@ -99,3 +100,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5080037, y: 2.3895328, z: 6.0244226}
   m_Center: {x: -0.000000059604645, y: 1.1947664, z: -0.00000035762787}
+--- !u!114 &8731213707327028698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286799711670072715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fecaeb55888b57459676095b24714cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 8

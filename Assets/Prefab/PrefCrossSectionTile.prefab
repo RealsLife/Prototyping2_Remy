@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2639006036556175633}
   m_LocalRotation: {x: 0.27059802, y: 0.6532815, z: -0.27059802, w: 0.65328145}
-  m_LocalPosition: {x: -0.07999992, y: 0.13999987, z: -0.264}
+  m_LocalPosition: {x: -0.07999802, y: 0.14000034, z: -0.26399985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5644330563939267649}
@@ -608,7 +608,7 @@ MonoBehaviour:
   - {fileID: 8496579284840255116}
   - {fileID: 576031003386309274}
   IsZebrapadEnabled: 1
-  prefabZebrapad: {fileID: 3808365586178544251, guid: 88e20447ed1542b4eb967f8aa01c0877,
+  prefabZebrapad: {fileID: 3307674419268839603, guid: e4e8a875995534b498ab9ad46c038d13,
     type: 3}
 --- !u!1 &7304108134663755494
 GameObject:
@@ -635,7 +635,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7304108134663755494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.13499975, z: -0.06299999}
+  m_LocalPosition: {x: -0.000005722046, y: 0.13499928, z: -0.062999904}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5644330563939267649}
@@ -719,7 +719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8599469047967210766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.64100075, y: 0.13499975, z: -0.06299999}
+  m_LocalPosition: {x: -0.64100456, y: 0.13499928, z: -0.062999904}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5644330563939267649}
@@ -803,7 +803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8864675692997323749}
   m_LocalRotation: {x: 0.27059802, y: 0.6532815, z: -0.27059802, w: 0.65328145}
-  m_LocalPosition: {x: -0.07999992, y: 0.13999987, z: 0.397}
+  m_LocalPosition: {x: -0.07999802, y: 0.14000034, z: 0.3970002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5644330563939267649}
