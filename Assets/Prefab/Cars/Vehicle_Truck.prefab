@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2846548046852753304}
   - component: {fileID: 6547106733795491246}
   - component: {fileID: 713670499120005463}
+  - component: {fileID: 4578912868436336387}
   m_Layer: 0
   m_Name: Vehicle_Truck
   m_TagString: Untagged
@@ -85,3 +86,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4578912868436336387
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286799711670072715}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5080037, y: 2.3895328, z: 6.0244226}
+  m_Center: {x: -0.000000059604645, y: 1.1947664, z: -0.00000035762787}
