@@ -5,7 +5,6 @@ using PathCreation;
 
 public class CameraSwitch : MonoBehaviour
 {
-    public EndOfPathInstruction End;
     public Camera FPS;
     public Camera TPS;
 
@@ -14,12 +13,14 @@ public class CameraSwitch : MonoBehaviour
         TPS.enabled = true;
         FPS.enabled = false;
     }
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if (End == EndOfPathInstruction.Stop)
+        if (other.CompareTag("TPSCamera"))
         {
+            Debug.Log("test");
             TPS.enabled = false;
             FPS.enabled = true;
         }
+
     }
 }
