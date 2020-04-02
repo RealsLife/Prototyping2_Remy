@@ -33,13 +33,7 @@ public class LevelEndDirector : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-            GenerateFeedback();
-    }
-
-    private void GenerateFeedback()
+    public void GenerateFeedback()
     {
         string feedbackPositive = "";
         string feedbackNegative = "";
