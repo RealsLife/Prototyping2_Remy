@@ -2,6 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum LightStartPosition
+{
+    Green,
+    Red
+}
+
+public enum LightState
+{
+    Green,
+    Orange,
+    Red
+}
+
 public class TrafficLightBehaviour : MonoBehaviour
 {
     [Header("GameObjects")]
@@ -33,8 +46,11 @@ public class TrafficLightBehaviour : MonoBehaviour
     [SerializeField]
     private Material _orangeLightUnlitMaterial;
 
-
     [Header("Variables")]
+
+    [SerializeField]
+    private LightStartPosition _lightStartposition;
+
     [SerializeField]
     [Range(0, 60)]
     private int _timeLightStaysRed;
@@ -49,6 +65,8 @@ public class TrafficLightBehaviour : MonoBehaviour
 
     private bool _hasOrangeLight;
 
+    private LightState _currentLightState;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,18 +78,41 @@ public class TrafficLightBehaviour : MonoBehaviour
         StartCoroutine(TrafficLightFunctionality());
     }
 
+    public LightState GetLightState()
+    {
+        return _currentLightState;
+    }
+
     IEnumerator TrafficLightFunctionality()
     {
-        while(true)
+        if(_lightStartposition == LightStartPosition.Red)
         {
-            LitRedLight();
-            yield return new WaitForSeconds(_timeLightStaysRed);
-            LitGreenLight();
-            yield return new WaitForSeconds(_timeLightStaysGreen);
-            if(_hasOrangeLight)
+            while (true)
             {
-                LitOrangeLight();
-                yield return new WaitForSeconds(_timeLightStaysOrange);
+                LitRedLight();
+                yield return new WaitForSeconds(_timeLightStaysRed);
+                LitGreenLight();
+                yield return new WaitForSeconds(_timeLightStaysGreen);
+                if (_hasOrangeLight)
+                {
+                    LitOrangeLight();
+                    yield return new WaitForSeconds(_timeLightStaysOrange);
+                }
+            }
+        }
+        else
+        {
+            while (true)
+            {
+                LitGreenLight();
+                yield return new WaitForSeconds(_timeLightStaysGreen);
+                if (_hasOrangeLight)
+                {
+                    LitOrangeLight();
+                    yield return new WaitForSeconds(_timeLightStaysOrange);
+                }
+                LitRedLight();
+                yield return new WaitForSeconds(_timeLightStaysRed);
             }
         }
     }
@@ -82,6 +123,7 @@ public class TrafficLightBehaviour : MonoBehaviour
         if (_hasOrangeLight)
             ChangeLightMaterial(_orangeLightObject, _orangeLightUnlitMaterial);
         ChangeLightMaterial(_redLightObject, _redLightUnlitMaterial);
+        _currentLightState = LightState.Green;
     }
 
     private void LitOrangeLight()
@@ -90,6 +132,7 @@ public class TrafficLightBehaviour : MonoBehaviour
         if (_hasOrangeLight)
             ChangeLightMaterial(_orangeLightObject, _orangeLightLitMaterial);
         ChangeLightMaterial(_redLightObject, _redLightUnlitMaterial);
+        _currentLightState = LightState.Orange;
     }
 
     private void LitRedLight()
@@ -98,6 +141,7 @@ public class TrafficLightBehaviour : MonoBehaviour
         if (_hasOrangeLight)
             ChangeLightMaterial(_orangeLightObject, _orangeLightUnlitMaterial);
         ChangeLightMaterial(_redLightObject, _redLightLitMaterial);
+        _currentLightState = LightState.Red;
     }
 
     private void TurnLightsOff()
