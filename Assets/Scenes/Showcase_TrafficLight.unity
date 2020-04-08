@@ -722,6 +722,7 @@ MonoBehaviour:
     type: 2}
   _orangeLightUnlitMaterial: {fileID: 2100000, guid: fede21a2c43c9fe4e95d218a6c370c4d,
     type: 2}
+  _lightStartposition: 1
   _timeLightStaysRed: 5
   _timeLightStaysOrange: 2
   _timeLightStaysGreen: 10
@@ -1174,6 +1175,7 @@ MonoBehaviour:
     type: 2}
   _orangeLightUnlitMaterial: {fileID: 2100000, guid: fede21a2c43c9fe4e95d218a6c370c4d,
     type: 2}
+  _lightStartposition: 0
   _timeLightStaysRed: 5
   _timeLightStaysOrange: 2
   _timeLightStaysGreen: 10
