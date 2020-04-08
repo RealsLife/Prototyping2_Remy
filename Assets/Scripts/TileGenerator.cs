@@ -8,6 +8,11 @@ public class TileGenerator : MonoBehaviour
     [SerializeField] Transform _grid;
     bool _spawnTile = true;
     Tile _mainTile;
+    float _tileSize;
+    private void Start()
+    {
+        _tileSize = Vector3.Scale(_TilePrefabs[0].transform.localScale, _TilePrefabs[0].GetComponent<MeshRenderer>().bounds.size).x;
+    }
     void Update()
     {
         GenerateTileChecker();
@@ -60,7 +65,7 @@ public class TileGenerator : MonoBehaviour
             if (_mainTile != null)
             {
                 Destroy(_mainTile.gameObject);
-            _mainTile = null;
+                _mainTile = null;
             }
         }
 
@@ -91,7 +96,7 @@ public class TileGenerator : MonoBehaviour
 
                         break;
                 }
-                return _mainTile.transform.position + _currentTileDirection;
+                return _mainTile.transform.position + _currentTileDirection* _tileSize;
             }
         }
     
