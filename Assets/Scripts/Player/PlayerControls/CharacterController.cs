@@ -1,37 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+[RequireComponent((typeof(PlayerInput)))]
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] private string _horizontalInputName;
-    [SerializeField] private string _verticalInputName;
+    private PlayerInput _playerInput;
     [SerializeField] private float _movementSpeed;
 
     private UnityEngine.CharacterController charController;
+    private Vector2 _inputMove;
 
     private void Awake()
     {
+        _playerInput = gameObject.GetComponent<PlayerInput>();
         charController = GetComponent<UnityEngine.CharacterController>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        PlayerMovement();
+        Move();
     }
 
-    private void PlayerMovement()
+    public void OnMove(InputAction.CallbackContext context)
     {
-        //Type Horizonatal
-        float horizInput = Input.GetAxis(_horizontalInputName) * _movementSpeed;
-        //Type Vertical
-        float vertInput = Input.GetAxis(_verticalInputName) * _movementSpeed;
+        _inputMove = context.ReadValue<Vector2>();
+    }
 
-        Vector3 forwardMovement = transform.forward * vertInput;
-        Vector3 rightMovement = transform.right * horizInput;
+    
 
-        charController.SimpleMove(forwardMovement + rightMovement);
+    private void Move()
+    {
+        ////Type Horizonatal
+        //float horizInput = Input.GetAxis(_horizontalInputName) * _movementSpeed;
+        ////Type Vertical
+        //float vertInput = Input.GetAxis(_verticalInputName) * _movementSpeed;
 
+        //Vector3 forwardMovement = transform.forward * InputController.CharacterForward + (-transform.forward * InputController.CharacterBackward);
+        ////Vector3 rightMovement = transform.right * ;
+
+        Vector3 movement = new Vector3(_inputMove.x, 0, _inputMove.y) * this._movementSpeed;
+
+        charController.SimpleMove(movement); //forwardMovement /*+ rightMovement*/);
     }
 
     private IEnumerator JumpEvent()

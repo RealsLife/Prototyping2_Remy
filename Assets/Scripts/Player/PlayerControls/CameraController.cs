@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private string _mouseXInputName;
+    //[SerializeField] private string _mouseXInputName;
     [SerializeField] private float _mouseSensitivity;
 
     [SerializeField] private Transform _playerBody;
+
+    private Vector2 _inputMouse;
 
     private float _xAxisClamp;
 
@@ -28,9 +31,14 @@ public class CameraController : MonoBehaviour
         CameraRotation();
     }
 
+    public void OnRotate(InputAction.CallbackContext context)
+    {
+        _inputMouse = context.ReadValue<Vector2>();
+    }
+
     private void CameraRotation()
     {
-        float mouseX = Input.GetAxis(_mouseXInputName) * _mouseSensitivity * Time.deltaTime;
+        float mouseX = _inputMouse.x * _mouseSensitivity * Time.deltaTime;
 
         if (_xAxisClamp > 90.0f)
         {
