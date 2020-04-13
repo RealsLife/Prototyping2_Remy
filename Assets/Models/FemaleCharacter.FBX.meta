@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 7558407a24a593040b1f7317d88febfd
+guid: 25454b8535604864ab6a2c477e57683f
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -7905222940169626885
+    second: CharacterFFinalSkin01
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -80,7 +83,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.0254
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

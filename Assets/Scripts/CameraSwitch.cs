@@ -7,11 +7,13 @@ public class CameraSwitch : MonoBehaviour
 {
     public Camera FPS;
     public Camera TPS;
+    public Animator CharacterAnimator;
 
     private void Start()
     {
         TPS.enabled = true;
         FPS.enabled = false;
+        CharacterAnimator.SetBool("Idle", true);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +22,7 @@ public class CameraSwitch : MonoBehaviour
             Debug.Log("test");
             TPS.enabled = false;
             FPS.enabled = true;
+            CharacterAnimator.SetBool("Idle", false);
         }
 
     }
