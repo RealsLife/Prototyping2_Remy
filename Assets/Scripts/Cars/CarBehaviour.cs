@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PathFollow))]
 public class CarBehaviour : MonoBehaviour
 {
+    public float Speed { get { return _speed; }}
+
     [SerializeField] private float _speed;
     private float _maxSpeed;
 
@@ -20,7 +23,7 @@ public class CarBehaviour : MonoBehaviour
 
     private void Update()
     {
-        SetBools();
+        //SetBools();
         SetSpeed();
         Movement();    
     }

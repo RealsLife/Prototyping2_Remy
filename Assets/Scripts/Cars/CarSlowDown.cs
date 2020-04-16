@@ -10,7 +10,7 @@ public class CarSlowDown : MonoBehaviour
         if (other.CompareTag("Car"))
         {
             Debug.Log("CarSpawnerBehaviour");
-            PathFollow.Speed -= 2;
+            //PathFollow.Speed -= 2;
         }
        
     }
@@ -20,7 +20,7 @@ public class CarSlowDown : MonoBehaviour
         if (other.CompareTag("Car"))
         {
             Debug.Log("CarSpawnerBehaviour");
-            PathFollow.Speed = 0;
+            //PathFollow.Speed = 0;
         }
     }
 

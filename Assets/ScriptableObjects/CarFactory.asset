@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CarFactory
   m_EditorClassIdentifier: 
   CarPrefabs:
-  - {fileID: 888905155230820866, guid: 64b2efec5433cca4f8ea585cf1ca909a, type: 3}
-  - {fileID: 7651938306022651079, guid: 748681b163d60ab4bb9cb2d38f556719, type: 3}
-  - {fileID: 1286799711670072715, guid: b8a0221a98d933d42b701bec851d3d23, type: 3}
+  - {fileID: 4458334451682739674, guid: 64b2efec5433cca4f8ea585cf1ca909a, type: 3}
+  - {fileID: 8308574719098322320, guid: b8a0221a98d933d42b701bec851d3d23, type: 3}
+  - {fileID: 3780948809901451621, guid: 748681b163d60ab4bb9cb2d38f556719, type: 3}
   MyColorGenerator: {fileID: 11400000, guid: 65c869cc59fabf545aa17247355f25fe, type: 2}

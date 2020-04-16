@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PathCreation;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +11,14 @@ public class CarFactory : ScriptableObject
     public GameObject[] CarPrefabs;
     public ColorGenerator MyColorGenerator;
 
-    public void SpawnCar(Vector3 position, CarSpawnerBehaviour.ForwardDirection forward)
+    public void SpawnCar(Vector3 position, CarSpawnerBehaviour.ForwardDirection forward /*, PathCreator pathCreator*/)
     {
         GameObject carToSpawn = CarPrefabs[Random.Range(0, CarPrefabs.Length)];
         
         Quaternion forwardDirection = GetForwardDirection(carToSpawn, forward);
 
         carToSpawn = GameObject.Instantiate(carToSpawn, position, forwardDirection);
+        //carToSpawn.GetComponent<PathFollow>().PathCreator = pathCreator;
         AssignColorToCar(carToSpawn);
     }
 
@@ -50,7 +52,7 @@ public class CarFactory : ScriptableObject
 
     private void AssignColorToCar(GameObject car)
     {
-        MeshRenderer carMeshRenderer = car.GetComponent<MeshRenderer>();
+        MeshRenderer carMeshRenderer = car.GetComponentInChildren<MeshRenderer>();
         carMeshRenderer.materials[0].SetColor("_BaseColor", MyColorGenerator.GenerateColor());
     }
 }
