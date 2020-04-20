@@ -12,11 +12,14 @@ public class CarBehaviour : MonoBehaviour
     private float _maxSpeed;
 
     [SerializeField] private GameObject _carCheck;
-    [SerializeField] private GameObject _playerCheck;
-    [SerializeField] private GameObject _playerCheckClose;
+    [SerializeField] private GameObject _player_TraficLightCheck;
+    [SerializeField] private GameObject _player_TraficLightCheckClose;
+
     private bool _isCarInRange;
     private bool _isPlayerInRange;
     private bool _isPlayerClose;
+    private bool _isTraficLightRed;
+    private bool _isTraficLightRedClose;
 
     public void Start()
     {
@@ -32,9 +35,11 @@ public class CarBehaviour : MonoBehaviour
 
     private void SetBools()
     {
-        _isPlayerInRange = _playerCheck.GetComponent<CarColliderCheck>()._isActive;
-        _isCarInRange = _carCheck.GetComponent<CarColliderCheck>()._isActive;
-        _isPlayerClose = _playerCheckClose.GetComponent<CarColliderCheck>()._isActive;
+        _isPlayerInRange = _player_TraficLightCheck.GetComponent<CarColliderCheck>()._isActive[0];
+        _isCarInRange = _carCheck.GetComponent<CarColliderCheck>()._isActive[0];
+        _isPlayerClose = _player_TraficLightCheckClose.GetComponent<CarColliderCheck>()._isActive[0];
+        _isTraficLightRed = _player_TraficLightCheck.GetComponent<CarColliderCheck>()._isActive[1];
+        _isTraficLightRedClose = _player_TraficLightCheckClose.GetComponent<CarColliderCheck>()._isActive[1];
     }
 
     private void SetSpeed()
@@ -44,7 +49,7 @@ public class CarBehaviour : MonoBehaviour
         if (_isCarInRange)
         {
             _speed = 0;
-        }else if (_isPlayerInRange)
+        }else if (_isPlayerInRange || _isTraficLightRed)
         {
             _speed -= _maxSpeed/5 * Time.deltaTime;
 
