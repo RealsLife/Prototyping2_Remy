@@ -131,90 +131,6 @@ Transform:
   m_Father: {fileID: 8799407448967781802}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1660270154743427518
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4153777257837354765}
-  - component: {fileID: 5549637593097218595}
-  m_Layer: 0
-  m_Name: ZebraPadSpawner (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4153777257837354765
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660270154743427518}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.463314, y: 0.31215167, z: -0.14242332}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7689889776833429055}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5549637593097218595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660270154743427518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  editorData:
-    _bezierPath:
-      points:
-      - {x: 10.010189, y: -0.5, z: -2.9995444}
-      - {x: 10.010189, y: -0.5, z: -2.9995444}
-      - {x: 10, y: -0.5, z: 3}
-      - {x: 10, y: -0.5, z: 3}
-      isClosed: 0
-      space: 0
-      controlMode: 0
-      autoControlLength: 0.3
-      boundsUpToDate: 0
-      bounds:
-        m_Center: {x: 0, y: 0, z: 0}
-        m_Extent: {x: 0, y: 0, z: 0}
-      perAnchorNormalsAngle:
-      - 0
-      - 0
-      globalNormalsAngle: 90
-      flipNormals: 0
-    vertexPathUpToDate: 0
-    vertexPathMaxAngleError: 0
-    vertexPathMinVertexSpacing: 0
-    showTransformTool: 1
-    showPathBounds: 0
-    showPerSegmentBounds: 0
-    displayAnchorPoints: 1
-    displayControlPoints: 1
-    bezierHandleScale: 1
-    globalDisplaySettingsFoldout: 0
-    keepConstantHandleSize: 0
-    showNormalsInVertexMode: 0
-    showBezierPathInVertexMode: 0
-    showDisplayOptions: 1
-    showPathOptions: 1
-    showVertexPathDisplayOptions: 1
-    showVertexPathOptions: 1
-    showNormals: 1
-    showNormalsHelpInfo: 0
-    tabIndex: 0
-  initialized: 1
 --- !u!1 &2985737632153577379
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7584928834023410744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.463314, y: 0.31215167, z: -0.14242332}
+  m_LocalPosition: {x: 6.255139, y: 0, z: 6.46006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7689889776833429055}
@@ -611,10 +527,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -2.5000648, y: -0.5, z: 10}
-      - {x: -0.00006484985, y: -0.5, z: 10}
-      - {x: 1.9750328, y: -0.5, z: 9.980558}
-      - {x: 3.4750328, y: -0.5, z: 9.980558}
+      - {x: -6.1273003, y: 0, z: 6.46006}
+      - {x: -5.2909956, y: 0, z: 0}
+      - {x: -10.571938, y: 0, z: -8.216249}
+      - {x: 6.6453557, y: 0, z: -6.247287}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -628,7 +544,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 1
+    vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0
     vertexPathMinVertexSpacing: 0
     showTransformTool: 1
@@ -636,10 +552,10 @@ MonoBehaviour:
     showPerSegmentBounds: 0
     displayAnchorPoints: 1
     displayControlPoints: 1
-    bezierHandleScale: 1
+    bezierHandleScale: 10
     globalDisplaySettingsFoldout: 0
     keepConstantHandleSize: 0
-    showNormalsInVertexMode: 0
+    showNormalsInVertexMode: 1
     showBezierPathInVertexMode: 0
     showDisplayOptions: 1
     showPathOptions: 1
@@ -909,7 +825,6 @@ Transform:
   m_Children:
   - {fileID: 8799407448967781802}
   - {fileID: 6642031085094964983}
-  - {fileID: 4153777257837354765}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1014,7 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PathCreator:
   - {fileID: 5162914091597445955}
-  - {fileID: 5549637593097218595}
+  - {fileID: 0}
   IsZebrapadEnabled: 1
   prefabZebrapad: {fileID: 5125542061361158428, guid: a3fdc58b70bda2040967714d440df8e0,
     type: 3}

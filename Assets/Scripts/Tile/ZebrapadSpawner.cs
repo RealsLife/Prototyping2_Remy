@@ -38,7 +38,7 @@ public class ZebrapadSpawner : MonoBehaviour
         float random_t = Random.Range(0f, 1f);
         _zebrapad.transform.position = PathCreator[_randomZebrapad].path.GetPointAtTime(random_t)+new Vector3(0,0.05f,0);
         _zebrapad.transform.rotation =  PathCreator[_randomZebrapad].path.GetRotation(random_t);
-        _zebrapad.transform.Rotate(new Vector3(0, 0, 0));
+        _zebrapad.transform.Rotate(new Vector3(90, -90, 0));
         _zebrapad.transform.parent = this.transform;
     }
 }

@@ -340,13 +340,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4852343991572362348}
-  m_LocalRotation: {x: 0.007841854, y: -0, z: -0, w: 0.99996924}
-  m_LocalPosition: {x: -0.463314, y: 7.6, z: -0.14242332}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.463314, y: 0, z: -0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5830081574843848284}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0.89900005, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7379565223792339789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,10 +362,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 0.50457376, y: 0.042838424, z: 15.001019}
-      - {x: 0.50457376, y: 0.042838424, z: 15.001019}
-      - {x: 0.46233743, y: -0.47275802, z: -14.475966}
-      - {x: 0.44964212, y: -0.43537164, z: -14.487296}
+      - {x: 0.50476795, y: 0, z: 15.004013}
+      - {x: 0.50476795, y: 0, z: 15.004013}
+      - {x: 0.5174633, y: -0.037386388, z: -14.475966}
+      - {x: 0.504768, y: 0, z: -14.487296}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -379,7 +379,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 1
+    vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0
     vertexPathMinVertexSpacing: 0
     showTransformTool: 1
