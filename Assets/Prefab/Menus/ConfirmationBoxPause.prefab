@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &4584476622402378231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440792479187784957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353d93eecdb998141ae357c207933a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6423938872440416568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,12 +22,12 @@ PrefabInstance:
     - target: {fileID: 19176568349501095, guid: 958caa513358fc3469ff1bc43e2b4a87,
         type: 3}
       propertyPath: m_Text
-      value: <b>Weet je zeker dat je terug wil gaan naar het hoofdscherm?</b>
+      value: <b>Weet je zeker dat je terug wil gaan naar het hoofdmenu?</b>
       objectReference: {fileID: 0}
     - target: {fileID: 19176568642760208, guid: 958caa513358fc3469ff1bc43e2b4a87,
         type: 3}
       propertyPath: m_Text
-      value: <b>Gepauseerd</b>
+      value: <b>Terug naar hoofdmenu</b>
       objectReference: {fileID: 0}
     - target: {fileID: 19176569001786820, guid: 958caa513358fc3469ff1bc43e2b4a87,
         type: 3}
@@ -125,7 +137,48 @@ PrefabInstance:
     - target: {fileID: 19176569001786821, guid: 958caa513358fc3469ff1bc43e2b4a87,
         type: 3}
       propertyPath: m_Name
-      value: Quit_BG (1)
+      value: ConfirmationBoxPause
+      objectReference: {fileID: 0}
+    - target: {fileID: 759029282506969212, guid: 958caa513358fc3469ff1bc43e2b4a87,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 759029282506969212, guid: 958caa513358fc3469ff1bc43e2b4a87,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 759029282506969212, guid: 958caa513358fc3469ff1bc43e2b4a87,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 759029282506969212, guid: 958caa513358fc3469ff1bc43e2b4a87,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4584476622402378231}
+    - target: {fileID: 759029282506969212, guid: 958caa513358fc3469ff1bc43e2b4a87,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 759029282506969212, guid: 958caa513358fc3469ff1bc43e2b4a87,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 759029282506969212, guid: 958caa513358fc3469ff1bc43e2b4a87,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958caa513358fc3469ff1bc43e2b4a87, type: 3}
+--- !u!1 &6440792479187784957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 19176569001786821, guid: 958caa513358fc3469ff1bc43e2b4a87,
+    type: 3}
+  m_PrefabInstance: {fileID: 6423938872440416568}
+  m_PrefabAsset: {fileID: 0}
