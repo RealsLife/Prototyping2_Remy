@@ -2622,6 +2622,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PedestrianCrossing1
       objectReference: {fileID: 0}
+    - target: {fileID: 3307674419268839603, guid: e4e8a875995534b498ab9ad46c038d13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3307674419268839605, guid: e4e8a875995534b498ab9ad46c038d13,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
