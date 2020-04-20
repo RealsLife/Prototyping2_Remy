@@ -12,6 +12,9 @@ public class TileGenerator : MonoBehaviour
     private void Start()
     {
         _tileSize = Vector3.Scale(_TilePrefabs[0].transform.localScale, _TilePrefabs[0].GetComponent<MeshRenderer>().bounds.size).x;
+        GenerateNewTile();
+        GenerateTileEnvironment();
+        _spawnTile = false;
     }
     void Update()
     {

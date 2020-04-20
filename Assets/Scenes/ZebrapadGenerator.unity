@@ -331,9 +331,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd575d1e843d2aa4cb58b4dc8c8f58c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PathCreator: []
+  PathCreator:
+  - {fileID: 1115568560}
   IsZebrapadEnabled: 1
-  prefabZebrapad: {fileID: 0}
+  prefabZebrapad: {fileID: 1397054633}
 --- !u!64 &1397054635
 MeshCollider:
   m_ObjectHideFlags: 0

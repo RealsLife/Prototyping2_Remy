@@ -43,7 +43,7 @@ public class Tile : MonoBehaviour
             TakeRandomActiveTileStreetDirection();
             TurnThisTileDirectionToSelectedTile();
             //turn it to the right direction
-            Debug.Log("weeeerk");
+         
             //rename tile to a direction
         }
     }
@@ -55,7 +55,7 @@ public class Tile : MonoBehaviour
 
     private void TurnThisTileDirectionToSelectedTile()
     {
-        Debug.Log("draai");
+       
         int _oppositeDirectionFromMainTile = DirectionFromMainTile + 2;
         int radiusNeededToTurn = (_oppositeDirectionFromMainTile - _randomActiveTileStreetDirection) * 90;
         this.transform.Rotate(0, radiusNeededToTurn, 0);
