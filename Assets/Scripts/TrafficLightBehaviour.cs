@@ -67,6 +67,9 @@ public class TrafficLightBehaviour : MonoBehaviour
 
     private LightState _currentLightState;
 
+    [Header("Dependencies")] [SerializeField]
+    private Collider _redLightCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -155,5 +158,17 @@ public class TrafficLightBehaviour : MonoBehaviour
     private void ChangeLightMaterial(GameObject light, Material material)
     {
         light.GetComponent<MeshRenderer>().material = material;
+    }
+
+    private void UpdateLightTrigger()
+    {
+        if (GetLightState() == LightState.Red)
+        {
+            _redLightCollider.enabled = true;
+        }
+        else
+        {
+            _redLightCollider.enabled = false;
+        }
     }
 }
