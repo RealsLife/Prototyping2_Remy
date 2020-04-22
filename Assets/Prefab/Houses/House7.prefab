@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6946421950844838493}
   - component: {fileID: 2107019743177873515}
   - component: {fileID: 5620820134144894098}
+  - component: {fileID: -867783019522846280}
   m_Layer: 0
   m_Name: House7
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-867783019522846280
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6214400331170959438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1916547603066419102, guid: 10163d79d045ccc489831a81da1bd4d2, type: 3}
