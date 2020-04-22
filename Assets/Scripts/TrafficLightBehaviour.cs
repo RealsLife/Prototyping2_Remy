@@ -81,6 +81,11 @@ public class TrafficLightBehaviour : MonoBehaviour
         StartCoroutine(TrafficLightFunctionality());
     }
 
+    void Update()
+    {
+        UpdateLightTrigger();
+    }
+
     public LightState GetLightState()
     {
         return _currentLightState;
