@@ -14,11 +14,19 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         _distantTravelled += Speed * Time.deltaTime;
-        transform.position = PathCreator.path.GetPointAtDistance(_distantTravelled, End);
-        transform.rotation = PathCreator.path.GetRotationAtDistance(_distantTravelled, End);
-        
-       
+        transform.position = PathCreator.path.GetPointAtDistance(_distantTravelled, EndOfPathInstruction.Stop);
+        transform.rotation = PathCreator.path.GetRotationAtDistance(_distantTravelled, EndOfPathInstruction.Stop);
+
+        if (Input.GetKeyDown("space")) //reset orbit camera
+        {
+            _distantTravelled = 0;
+ 
+        }
+
+
+
     }
 
 }

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -531,6 +531,11 @@ PrefabInstance:
       propertyPath: CharacterAnimator
       value: 
       objectReference: {fileID: 1587139123}
+    - target: {fileID: 4475248152348509493, guid: 7c750d3a950926f458be380c1b548719,
+        type: 3}
+      propertyPath: PathCreator
+      value: 
+      objectReference: {fileID: 1163447770}
     - target: {fileID: 4475248152630296814, guid: 7c750d3a950926f458be380c1b548719,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -554,6 +559,11 @@ PrefabInstance:
     - target: {fileID: 4475248152630296815, guid: 7c750d3a950926f458be380c1b548719,
         type: 3}
       propertyPath: editorData.showDisplayOptions
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475248152630296815, guid: 7c750d3a950926f458be380c1b548719,
+        type: 3}
+      propertyPath: editorData.globalDisplaySettingsFoldout
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7301033562465443499, guid: 7c750d3a950926f458be380c1b548719,
@@ -862,7 +872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PathCreator: {fileID: 1163447770}
-  End: 2
+  End: 0
   Speed: 10
 --- !u!20 &1541781034 stripped
 Camera:
@@ -957,6 +967,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2772712880973285384, guid: 29642339ce604604785498dc945917e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772712880973285384, guid: 29642339ce604604785498dc945917e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.06104851
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772712880973285384, guid: 29642339ce604604785498dc945917e5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772712880973285384, guid: 29642339ce604604785498dc945917e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772712880973285384, guid: 29642339ce604604785498dc945917e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99813485
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772712880973285384, guid: 29642339ce604604785498dc945917e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2772712881614228996, guid: 29642339ce604604785498dc945917e5,
         type: 3}
       propertyPath: m_Name
@@ -980,7 +1020,12 @@ PrefabInstance:
     - target: {fileID: 2772712881877264497, guid: 29642339ce604604785498dc945917e5,
         type: 3}
       propertyPath: far clip plane
-      value: 100
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772712881877264497, guid: 29642339ce604604785498dc945917e5,
+        type: 3}
+      propertyPath: field of view
+      value: 50.66245
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29642339ce604604785498dc945917e5, type: 3}
