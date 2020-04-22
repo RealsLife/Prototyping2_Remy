@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
     public PathCreator PathCreator;
     public EndOfPathInstruction End;
     public float Speed;
-    public bool Reset;
+    public bool Reset = false;
     
 
     private float _distantTravelled;

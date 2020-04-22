@@ -9,7 +9,7 @@ public class CameraSwitch : MonoBehaviour
     public Camera TPS;
     public Animator CharacterAnimator;
     public PathCreator PathCreator;
-    public bool Reset;
+    public bool Reset = false;
 
     private void Start()
     {
