@@ -9,6 +9,7 @@ public class CameraSwitch : MonoBehaviour
     public Camera TPS;
     public Animator CharacterAnimator;
     public PathCreator PathCreator;
+    public bool Reset;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class CameraSwitch : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown("space")) //reset camera's
+        if (Reset == true) //reset camera's
         {
             TPS.enabled = true;
             FPS.enabled = false;

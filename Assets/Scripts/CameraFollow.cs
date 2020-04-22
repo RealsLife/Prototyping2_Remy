@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
     public PathCreator PathCreator;
     public EndOfPathInstruction End;
     public float Speed;
+    public bool Reset;
     
 
     private float _distantTravelled;
@@ -19,7 +20,7 @@ public class CameraFollow : MonoBehaviour
         transform.position = PathCreator.path.GetPointAtDistance(_distantTravelled, EndOfPathInstruction.Stop);
         transform.rotation = PathCreator.path.GetRotationAtDistance(_distantTravelled, EndOfPathInstruction.Stop);
 
-        if (Input.GetKeyDown("space")) //reset orbit camera
+        if (Reset == true) //reset orbit camera
         {
             _distantTravelled = 0;
  
