@@ -38,7 +38,8 @@ public class SubjectHandler : MonoBehaviour
             AdjustScore(piece);
         }
 
-        UIPopup.PopFeedback(piece);
+        if(piece.Judgement != Verdict.None)
+            UIPopup.PopFeedback(piece);
     }
 
     private void AdjustScore(SubjectPiece piece)

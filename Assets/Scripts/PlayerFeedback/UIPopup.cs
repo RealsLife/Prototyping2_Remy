@@ -15,7 +15,7 @@ public class UIPopup : MonoBehaviour
         if(piece.Judgement == Verdict.Positive)
         {
             CardGreen.gameObject.SetActive(true);
-            CardGreen.PlayCardPopup("");
+            CardGreen.PlayCardPopup(piece.Description);
         }
         else if(piece.Judgement == Verdict.Mild)
         {
