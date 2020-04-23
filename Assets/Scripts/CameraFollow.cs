@@ -12,10 +12,16 @@ public class CameraFollow : MonoBehaviour
 
     private float _distantTravelled;
 
+    private void Start()
+    {
+        
+        
+    }
+    
     // Update is called once per frame
     void Update()
     {
-
+        PathCreator = GameObject.Find("OrbitCamera").GetComponent<PathCreator>();
         _distantTravelled += Speed * Time.deltaTime;
         transform.position = PathCreator.path.GetPointAtDistance(_distantTravelled, EndOfPathInstruction.Stop);
         transform.rotation = PathCreator.path.GetRotationAtDistance(_distantTravelled, EndOfPathInstruction.Stop);
