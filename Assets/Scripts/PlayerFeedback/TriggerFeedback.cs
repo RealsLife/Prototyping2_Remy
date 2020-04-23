@@ -9,7 +9,7 @@ public class TriggerFeedback : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //GameObject.Find("TileGenerator").GetComponent<TileGenerator>().SpawnTile = true;
+            GameObject.Find("TileGenerator").GetComponent<TileGenerator>().SpawnTile = true;
             LevelEndDirector director = FindObjectOfType<LevelEndDirector>();
             director.GenerateFeedback();
         }

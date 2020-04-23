@@ -16,7 +16,8 @@ public class PlayerSpawner : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        Instantiate(_PlayerPrefab, transform.position, transform.rotation);
+        GameObject _player = Instantiate(_PlayerPrefab, transform.position, transform.rotation);
         _IsActive = true;
+        _player.transform.parent = this.transform;
     }
 }
