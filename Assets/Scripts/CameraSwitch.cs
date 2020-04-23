@@ -13,6 +13,7 @@ public class CameraSwitch : MonoBehaviour
 
     private void Start()
     {
+        TPS = GameObject.Find("TPS Camera").GetComponent<Camera>();
         TPS.enabled = true;
         FPS.enabled = false;
         CharacterAnimator.SetBool("Idle", true);
