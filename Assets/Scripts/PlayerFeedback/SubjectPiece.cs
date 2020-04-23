@@ -32,7 +32,6 @@ public class SubjectPiece : MonoBehaviour
             piece.gameObject.SetActive(true);
         }
 
-
         Destroy(this.gameObject);
     }
 

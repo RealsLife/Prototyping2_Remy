@@ -28,13 +28,13 @@ public class LevelEndDirector : MonoBehaviour
     private void AssignUIPopupToChallenges()
     {
         foreach (SubjectHandler subjectHandler in _subjectHandlers)
-        {
             subjectHandler.UIPopup = UIPopup;
-        }
     }
 
     public void GenerateFeedback()
     {
+        FindChallenges();
+
         string feedbackPositive = "";
         string feedbackNegative = "";
 
@@ -46,6 +46,7 @@ public class LevelEndDirector : MonoBehaviour
             PlayerScore = Mathf.Max(PlayerScore, 0);
         }
 
+        Debug.Log(PlayerScore);
         UILevelEndFeedback.UpdateFeedbackTextField(feedbackPositive, feedbackNegative, PlayerScore);
         UILevelEndFeedback.gameObject.SetActive(true);
     }
