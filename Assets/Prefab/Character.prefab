@@ -1218,6 +1218,16 @@ PrefabInstance:
       propertyPath: PathCreator
       value: 
       objectReference: {fileID: 7514724984400997305}
+    - target: {fileID: 4475248152348509493, guid: 7c750d3a950926f458be380c1b548719,
+        type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 2772712881614228996}
+    - target: {fileID: 4475248152348509493, guid: 7c750d3a950926f458be380c1b548719,
+        type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 3736177318583316517}
     - target: {fileID: 4475248152630296812, guid: 7c750d3a950926f458be380c1b548719,
         type: 3}
       propertyPath: m_TagString
@@ -1276,7 +1286,7 @@ PrefabInstance:
     - target: {fileID: 4475248152630296815, guid: 7c750d3a950926f458be380c1b548719,
         type: 3}
       propertyPath: editorData.vertexPathUpToDate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7301033562465443499, guid: 7c750d3a950926f458be380c1b548719,
         type: 3}
@@ -1350,6 +1360,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c750d3a950926f458be380c1b548719, type: 3}
+--- !u!1 &3736177318583316517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7317080064015620979, guid: 7c750d3a950926f458be380c1b548719,
+    type: 3}
+  m_PrefabInstance: {fileID: 6220294572845165398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3675104020982986237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7301033562465443499, guid: 7c750d3a950926f458be380c1b548719,
