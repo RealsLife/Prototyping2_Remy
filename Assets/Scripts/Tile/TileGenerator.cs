@@ -6,7 +6,7 @@ public class TileGenerator : MonoBehaviour
 {
     [SerializeField] private Tile[] _TilePrefabs;
     [SerializeField] Transform _grid;
-    bool _spawnTile = true;
+    [HideInInspector]public bool SpawnTile = true;
     Tile _mainTile;
     float _tileSize;
     private void Start()
@@ -14,20 +14,21 @@ public class TileGenerator : MonoBehaviour
         _tileSize = Vector3.Scale(_TilePrefabs[0].transform.localScale, _TilePrefabs[0].GetComponent<MeshRenderer>().bounds.size).x;
         GenerateNewTile();
         GenerateTileEnvironment();
-        _spawnTile = false;
+        SpawnTile = false;
+        Debug.Log("SPAWN NIEUWE MAINTILE");
     }
     void Update()
     {
         GenerateTileChecker();
     }
-
+     
     void GenerateTileChecker()
     {
-        if (Input.GetKeyDown("space")) //Genereert een tile als deze conditie wordt voldaan zoals een collision check
+        if (SpawnTile) //Genereert een tile als deze conditie wordt voldaan zoals een collision check
         {
             GenerateNewTile();
             GenerateTileEnvironment();
-            _spawnTile = false;
+            SpawnTile = false;
         }
     }
 
