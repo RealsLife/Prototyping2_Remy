@@ -14,7 +14,7 @@ public class SidewalkController : MonoBehaviour
     [Header("Objective Prefab")]
     [SerializeField] private GameObject _objectivePrefab;
     private PathCreator _randomSideWalk;
-    private PathCreator _previousSideWalk;
+    private PathCreator _previousSideWalk = null;
     private float _randomSideWalkOffset;
 
     private void Start()
@@ -32,7 +32,7 @@ public class SidewalkController : MonoBehaviour
 
     private PathCreator TakeRandomSideWalk()
     {
-        _randomSideWalk = _sideWalks[Random.Range(0, _sideWalks.Length - 1)];
+        _randomSideWalk = _sideWalks[Random.Range(0, _sideWalks.Length)];
         if(_randomSideWalk == _previousSideWalk)
         {
            return TakeRandomSideWalk();
@@ -46,6 +46,7 @@ public class SidewalkController : MonoBehaviour
 
     private void AssignRandomPositionOnBezier(PathCreator bezier,GameObject target)
     {
+        Debug.Log("add offset objective");
         float random_t = Random.Range(0f, 1f);
        // AddOffset()
         target.transform.position = bezier.path.GetPointAtTime(random_t) + new Vector3(0, 0.05f, 0);
@@ -65,8 +66,10 @@ public class SidewalkController : MonoBehaviour
     {
         if (!_objectivePrefab.scene.IsValid())
         {
+            Debug.Log("instantiate objective");
             _objectivePrefab = Instantiate(_objectivePrefab);
         }
+        Debug.Log("adjust objective");
         AssignRandomPositionOnBezier(TakeRandomSideWalk(), _objectivePrefab);
     }
 

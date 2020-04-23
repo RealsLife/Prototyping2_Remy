@@ -2245,7 +2245,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PathCreator:
   - {fileID: 5162914091597445955}
-  - {fileID: 0}
   IsZebrapadEnabled: 1
   prefabZebrapad: {fileID: 5125542061361158428, guid: a3fdc58b70bda2040967714d440df8e0,
     type: 3}
