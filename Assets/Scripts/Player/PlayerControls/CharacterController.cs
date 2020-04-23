@@ -32,17 +32,9 @@ public class CharacterController : MonoBehaviour
 
     private void Move()
     {
-        ////Type Horizonatal
-        //float horizInput = Input.GetAxis(_horizontalInputName) * _movementSpeed;
-        ////Type Vertical
-        //float vertInput = Input.GetAxis(_verticalInputName) * _movementSpeed;
-
-        //Vector3 forwardMovement = transform.forward * InputController.CharacterForward + (-transform.forward * InputController.CharacterBackward);
-        ////Vector3 rightMovement = transform.right * ;
-
-        Vector3 movement = new Vector3(_inputMove.x, 0, _inputMove.y) * this._movementSpeed;
-
-        charController.SimpleMove(movement); //forwardMovement /*+ rightMovement*/);
+        Vector3 inputMovement = new Vector3(_inputMove.x, 0, _inputMove.y) * this._movementSpeed;
+        Vector3 movement = transform.forward * inputMovement.z + transform.right * inputMovement.x;
+        charController.SimpleMove(movement); 
     }
 
     private IEnumerator JumpEvent()
