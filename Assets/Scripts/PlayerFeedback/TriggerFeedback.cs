@@ -7,8 +7,11 @@ public class TriggerFeedback : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        LevelEndDirector director = FindObjectOfType<LevelEndDirector>();
-
-        director.GenerateFeedback();
+        if (other.gameObject.tag == "Player")
+        {
+            //GameObject.Find("TileGenerator").GetComponent<TileGenerator>().SpawnTile = true;
+            LevelEndDirector director = FindObjectOfType<LevelEndDirector>();
+            director.GenerateFeedback();
+        }
     }
 }

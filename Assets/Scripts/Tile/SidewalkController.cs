@@ -39,6 +39,7 @@ public class SidewalkController : MonoBehaviour
         }
         else
         {
+            _previousSideWalk = _randomSideWalk;
             return _randomSideWalk;
         }      
     }
