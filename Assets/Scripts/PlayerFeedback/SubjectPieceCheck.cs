@@ -21,7 +21,7 @@ public class SubjectPieceCheck : SubjectPiece
             Judgement = Verdict.Positive;
             Description = _descriptionPositive;
         }
-        Debug.Log(_mainPiece.EnablePieces.Count);
+
         Handler.TriggerVerdict(this);
         Destroy(this.gameObject);
     }

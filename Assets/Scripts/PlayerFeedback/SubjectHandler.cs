@@ -18,12 +18,16 @@ public class SubjectHandler : MonoBehaviour
     [HideInInspector]
     public UIPopup UIPopup;
 
+    [SerializeField] private bool _singularPenalty;
+    private bool _singularPenaltyGiven = false;
+
+
     private void Start()
     {
         UIPopup = FindObjectOfType<UIPopup>();
     }
 
-    public void TriggerVerdict(SubjectPiece piece)
+    public virtual void TriggerVerdict(SubjectPiece piece)
     {
         if (piece.Judgement == Verdict.Positive)
         {
@@ -35,11 +39,16 @@ public class SubjectHandler : MonoBehaviour
             if (!_negatives.Contains(piece.Description))
                 _negatives.Add(piece.Description);
 
-            AdjustScore(piece);
+            if(!_singularPenalty || (_singularPenalty && !_singularPenaltyGiven))
+                AdjustScore(piece);
         }
 
         if(piece.Judgement != Verdict.None)
+        {
+            UIPopup = FindObjectOfType<UIPopup>();
             UIPopup.PopFeedback(piece);
+        }
+
     }
 
     private void AdjustScore(SubjectPiece piece)
@@ -48,6 +57,8 @@ public class SubjectHandler : MonoBehaviour
             _scorePenalty -= 3;
         else if (piece.Judgement == Verdict.Serious)
             _scorePenalty -= 6;
+
+        _singularPenaltyGiven = true;
     }
 
     private string StringListToString(List<string> stringList)
