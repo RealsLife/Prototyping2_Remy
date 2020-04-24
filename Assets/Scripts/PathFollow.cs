@@ -7,12 +7,13 @@ using System.IO;
 
 public class PathFollow : MonoBehaviour
 {
-    private PathCreator _pathCreator { get; set; }
     //public EndOfPathInstruction End;
     private float _speed;
-    
-    private float _distanceTravelled;
-    private bool _pathTimeGoesFrom0To1 = true;
+
+    public PathCreator _currentPathToFollow;
+    public float _distanceTravelledOnCurrentPath;
+    public bool _pathTimeGoesFrom0To1 = true;
+    public bool _distanceTravelledOnCurrentPathIsSet = false;
 
     void Start()
     {
@@ -21,71 +22,76 @@ public class PathFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        //GetSpeed();
-        
-        if(_pathTimeGoesFrom0To1)
-        {
-            _distanceTravelled += _speed * Time.fixedDeltaTime;
-        }
-        else
-        {
-            _distanceTravelled -= _speed * Time.fixedDeltaTime;
-        }
+        MoveCarAlongPath();
+        RotateCarAlongPath();
+        DestroyCarOnTileExit();
+    }
 
-        if (_pathCreator)
+    private void DestroyCarOnTileExit()
+    {
+        if (_distanceTravelledOnCurrentPath < -.5f || _distanceTravelledOnCurrentPath > 30.5f)
         {
-            transform.position = _pathCreator.path.GetPointAtDistance(_distanceTravelled); //+ offset;
-            
-            if (!_pathTimeGoesFrom0To1)
-            {
-                Quaternion rotation = _pathCreator.path.GetRotationAtDistance(_distanceTravelled);
-                Vector3 rotationVector = rotation.eulerAngles;
-                rotationVector.y -= 180;
-                transform.rotation = Quaternion.Euler(rotationVector);
-            }
-            else
-            {
-                transform.rotation = _pathCreator.path.GetRotationAtDistance(_distanceTravelled);
-            }
+            GameObject.Destroy(this.gameObject);
+            //Debug.Log("destroyed");
         }
     }
 
-    private void GetSpeed()
+    private void MoveCarAlongPath()
     {
-        if(_speed != gameObject.GetComponent<CarBehaviour>().Speed)
+        if (_distanceTravelledOnCurrentPathIsSet == false)
         {
-            _speed = gameObject.GetComponent<CarBehaviour>().Speed;
+            _distanceTravelledOnCurrentPath = _currentPathToFollow.path.GetClosestDistanceAlongPath(transform.position);
+            _distanceTravelledOnCurrentPathIsSet = true;
+        }
+
+        if (_pathTimeGoesFrom0To1)
+        {
+            _distanceTravelledOnCurrentPath += _speed * Time.fixedDeltaTime;
+        }
+        else
+        {
+            _distanceTravelledOnCurrentPath -= _speed * Time.fixedDeltaTime;
+        }
+
+
+        if(_currentPathToFollow)
+        {
+            transform.position = _currentPathToFollow.path.GetPointAtDistance(_distanceTravelledOnCurrentPath, EndOfPathInstruction.Stop);
+        }
+    }
+
+    private void RotateCarAlongPath()
+    {
+        if (!_pathTimeGoesFrom0To1)
+        {
+            Quaternion rotation = _currentPathToFollow.path.GetRotationAtDistance(_distanceTravelledOnCurrentPath);
+            Vector3 rotationVector = rotation.eulerAngles;
+            rotationVector.y -= 180;
+            transform.rotation = Quaternion.Euler(rotationVector);
+        }
+        else
+        {
+            transform.rotation = _currentPathToFollow.path.GetRotationAtDistance(_distanceTravelledOnCurrentPath);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.root.CompareTag("Tile"))
+        if(other.transform.CompareTag("Road"))
         {
-            if (_pathCreator == null)
-            {
-                _pathCreator = GetClosestPathOnTile(other);
-            }
-            else if (_pathCreator.GetInstanceID() != other.transform.root.GetComponentsInChildren<PathCreator>()[0].GetInstanceID()
-                    && _pathCreator.GetInstanceID() != other.transform.root.GetComponentsInChildren<PathCreator>()[1].GetInstanceID())
-            {
-                _pathCreator = GetClosestPathOnTile(other);
+            _currentPathToFollow = GetClosestPathOnTile(other);
+            _pathTimeGoesFrom0To1 = PathGoesFrom0To1(_currentPathToFollow);
+            _distanceTravelledOnCurrentPathIsSet = false;
+            Debug.Log("ENTER:" + _currentPathToFollow.transform.root.name);
+        }
+    }
 
-                _distanceTravelled = 0;
-                if (_pathCreator.path.GetClosestTimeOnPath(transform.position) < .5f)
-                {
-                    _pathTimeGoesFrom0To1 = true;
-                }
-                else
-                {
-                    _pathTimeGoesFrom0To1 = false;
-                }
-            }
-            else
-            {
-                //to do: add behaviour for when car hits collider from tile it's already on (the end tile)
-                Debug.Log("Nothing to see here");
-            }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.transform.CompareTag("Road"))
+        {
+            Debug.Log("EXIT:" + other.transform.root.name);
+            
         }
     }
 
@@ -103,6 +109,20 @@ public class PathFollow : MonoBehaviour
             }
         }
         return closestPath;
+    }
+
+    private bool PathGoesFrom0To1(PathCreator pathCreator)
+    {
+        bool pathGoesFrom0To1 = true;
+        if(pathCreator.path.GetClosestTimeOnPath(transform.position) < .5f)
+        {
+            pathGoesFrom0To1 = true;
+        }
+        else
+        {
+            pathGoesFrom0To1 = false;
+        }
+        return pathGoesFrom0To1; 
     }
 
 }

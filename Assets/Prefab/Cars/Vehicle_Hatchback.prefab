@@ -62,7 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38303c1e6d03614d9a4da546303b1d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  End: 0
+  _currentPathToFollow: {fileID: 0}
+  _distanceTravelledOnCurrentPath: 0
+  _pathTimeGoesFrom0To1: 1
+  _distanceTravelledOnCurrentPathIsSet: 0
 --- !u!114 &6352059931600909275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,9 +78,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fecaeb55888b57459676095b24714cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 10
   _carCheck: {fileID: 0}
-  _playerCheck: {fileID: 0}
+  _player_TraficLightCheck: {fileID: 0}
+  _player_TraficLightCheckClose: {fileID: 0}
 --- !u!1 &4458334452338819023
 GameObject:
   m_ObjectHideFlags: 0

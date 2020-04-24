@@ -11,41 +11,19 @@ public class CarFactory : ScriptableObject
     public GameObject[] CarPrefabs;
     public ColorGenerator MyColorGenerator;
 
-    public void SpawnCar(Vector3 position, CarSpawnerBehaviour.ForwardDirection forward /*, PathCreator pathCreator*/)
+    public void SpawnCar(Vector3 position, Vector3 forwardDirection)
     {
         GameObject carToSpawn = CarPrefabs[Random.Range(0, CarPrefabs.Length)];
         
-        Quaternion forwardDirection = GetForwardDirection(carToSpawn, forward);
+        Quaternion carLookDirection = GetForwardDirection(carToSpawn, forwardDirection);
 
-        carToSpawn = GameObject.Instantiate(carToSpawn, position, forwardDirection);
-        //carToSpawn.GetComponent<PathFollow>().PathCreator = pathCreator;
+        carToSpawn = GameObject.Instantiate(carToSpawn, position, carLookDirection);
         AssignColorToCar(carToSpawn);
     }
 
-    private Quaternion GetForwardDirection(GameObject car, CarSpawnerBehaviour.ForwardDirection forward)
+    private Quaternion GetForwardDirection(GameObject car, Vector3 forwardDirection)
     {
-        Quaternion forwardRotation = Quaternion.identity;
-        Vector3 forwardVector = Vector3.zero;
-
-        switch (forward)
-        {
-            case CarSpawnerBehaviour.ForwardDirection.WorldForward:
-                forwardVector = Vector3.forward;
-                break;
-
-            case CarSpawnerBehaviour.ForwardDirection.WorldBack:
-                forwardVector = Vector3.back;
-                break;
-
-            case CarSpawnerBehaviour.ForwardDirection.WorldLeft:
-                forwardVector = Vector3.left;
-                break;
-            case CarSpawnerBehaviour.ForwardDirection.WorldRight:
-                forwardVector = Vector3.right;
-                break;
-        }
-
-        forwardRotation = Quaternion.LookRotation(forwardVector, car.transform.up);
+        Quaternion forwardRotation = Quaternion.LookRotation(forwardDirection, car.transform.up);
 
         return forwardRotation;
     }
