@@ -7,14 +7,10 @@ using System.IO;
 
 public class PathFollow : MonoBehaviour
 {
-    //public EndOfPathInstruction End;
     private float _speed;
 
     public PathCreator _currentPathToFollow;
     public float _distanceTravelledOnCurrentPath;
-
-    //public float _carOffsetFromCenter;
-    //Vector3 _carDistanceFromCenter;
 
     public bool _pathTimeGoesFrom0To1 = true;
     public bool _distanceTravelledOnCurrentPathIsSet = false;
@@ -22,6 +18,8 @@ public class PathFollow : MonoBehaviour
     private Quaternion _carRotation;
     private bool _rotationIsBasedOnRotationPoint;
     public Transform _carRotationPoint;
+
+    public PathController _pathController;
 
     void Start()
     {
@@ -98,10 +96,17 @@ public class PathFollow : MonoBehaviour
     {
         if(other.transform.CompareTag("Road"))
         {
-            _currentPathToFollow = GetClosestPathOnTile(other);
+            Debug.Log("TRIGGER ENTERED");
+            //_currentPathToFollow = GetClosestPathOnTile(other);
+
+            _pathController = other.transform.root.GetComponentInChildren<PathController>();
+
+            _currentPathToFollow = GetRandomPath(transform.position);
+
             _pathTimeGoesFrom0To1 = PathGoesFrom0To1(_currentPathToFollow);
             _distanceTravelledOnCurrentPathIsSet = false;
             _rotationIsBasedOnRotationPoint = false;
+            
             //Debug.Log("ENTER:" + _currentPathToFollow.transform.root.name);
         }
     }
@@ -143,6 +148,11 @@ public class PathFollow : MonoBehaviour
             pathGoesFrom0To1 = false;
         }
         return pathGoesFrom0To1; 
+    }
+
+    private PathCreator GetRandomPath(Vector3 position)
+    {
+        return _pathController.GetPossiblePathsFromPosition(position)[Random.Range(0, _pathController.GetPossiblePathsFromPosition(position).Count)];
     }
 
 }
