@@ -12,12 +12,21 @@ public class PathFollow : MonoBehaviour
 
     public PathCreator _currentPathToFollow;
     public float _distanceTravelledOnCurrentPath;
+
+    //public float _carOffsetFromCenter;
+    //Vector3 _carDistanceFromCenter;
+
     public bool _pathTimeGoesFrom0To1 = true;
     public bool _distanceTravelledOnCurrentPathIsSet = false;
+
+    private Quaternion _carRotation;
+    private bool _rotationIsBasedOnRotationPoint;
+    public Transform _carRotationPoint;
 
     void Start()
     {
         _speed = gameObject.GetComponent<CarBehaviour>().Speed;
+        //_carOffsetFromCenter = 2.27f; //transform.GetComponentInChildren<BoxCollider>().
     }
 
     void FixedUpdate()
@@ -25,6 +34,7 @@ public class PathFollow : MonoBehaviour
         MoveCarAlongPath();
         RotateCarAlongPath();
         DestroyCarOnTileExit();
+        //_carDistanceFromCenter = transform.forward.normalized * _carOffsetFromCenter;
     }
 
     private void DestroyCarOnTileExit()
@@ -62,16 +72,25 @@ public class PathFollow : MonoBehaviour
 
     private void RotateCarAlongPath()
     {
+        if (_rotationIsBasedOnRotationPoint)
+        {
+            //Debug.Log("car center");
+            _carRotation = _currentPathToFollow.path.GetRotation(_currentPathToFollow.path.GetClosestTimeOnPath(_carRotationPoint.position));
+        }
+        else
+        {
+            _carRotation = _currentPathToFollow.path.GetRotation(_currentPathToFollow.path.GetClosestTimeOnPath(transform.position));
+        }
+
         if (!_pathTimeGoesFrom0To1)
         {
-            Quaternion rotation = _currentPathToFollow.path.GetRotationAtDistance(_distanceTravelledOnCurrentPath);
-            Vector3 rotationVector = rotation.eulerAngles;
+            Vector3 rotationVector = _carRotation.eulerAngles;
             rotationVector.y -= 180;
             transform.rotation = Quaternion.Euler(rotationVector);
         }
         else
         {
-            transform.rotation = _currentPathToFollow.path.GetRotationAtDistance(_distanceTravelledOnCurrentPath);
+            transform.rotation = _carRotation;
         }
     }
 
@@ -82,7 +101,8 @@ public class PathFollow : MonoBehaviour
             _currentPathToFollow = GetClosestPathOnTile(other);
             _pathTimeGoesFrom0To1 = PathGoesFrom0To1(_currentPathToFollow);
             _distanceTravelledOnCurrentPathIsSet = false;
-            Debug.Log("ENTER:" + _currentPathToFollow.transform.root.name);
+            _rotationIsBasedOnRotationPoint = false;
+            //Debug.Log("ENTER:" + _currentPathToFollow.transform.root.name);
         }
     }
 
@@ -90,8 +110,8 @@ public class PathFollow : MonoBehaviour
     {
         if(other.transform.CompareTag("Road"))
         {
-            Debug.Log("EXIT:" + other.transform.root.name);
-            
+            //Debug.Log("EXIT:" + other.transform.root.name);
+            _rotationIsBasedOnRotationPoint = true;
         }
     }
 
