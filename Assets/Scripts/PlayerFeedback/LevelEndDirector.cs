@@ -46,7 +46,6 @@ public class LevelEndDirector : MonoBehaviour
             PlayerScore = Mathf.Max(PlayerScore, 0);
         }
 
-        Debug.Log(PlayerScore);
         UILevelEndFeedback.UpdateFeedbackTextField(feedbackPositive, feedbackNegative, PlayerScore);
         UILevelEndFeedback.gameObject.SetActive(true);
     }

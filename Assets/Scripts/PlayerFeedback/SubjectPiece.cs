@@ -21,18 +21,22 @@ public class SubjectPiece : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Handler.TriggerVerdict(this);
-
-        ChangePieceStates(ref EnablePieces, true);
-        ChangePieceStates(ref DisablePieces, false);
-
-        foreach (SubjectPieceRaycast piece in RaycastPieces)
+        if(other.gameObject.tag == "Player")
         {
-            piece.MainPiece = this;
-            piece.gameObject.SetActive(true);
+            Handler.TriggerVerdict(this);
+
+            ChangePieceStates(ref EnablePieces, true);
+            ChangePieceStates(ref DisablePieces, false);
+
+            foreach (SubjectPieceRaycast piece in RaycastPieces)
+            {
+                piece.MainPiece = this;
+                piece.gameObject.SetActive(true);
+            }
+
+            Destroy(this.gameObject);
         }
 
-        Destroy(this.gameObject);
     }
 
     protected void ChangePieceStates(ref List<SubjectPiece> subjectPieces, bool state)
