@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17415047, g: 0.2177783, b: 0.29997754, a: 1}
+  m_IndirectSpecularColor: {r: 0.17415002, g: 0.21777764, b: 0.29997647, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -747,6 +747,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Feedback
       objectReference: {fileID: 0}
+    - target: {fileID: 819757733594766282, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671215719805516664, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3131434082771834440, guid: 22a6e43bc1178704e9db36c93a59ddf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -801,6 +811,87 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357314425255551485, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.6000977
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1383490942}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResetCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 6450655677493571723, guid: 56a2a345e25db6242a045320028bb150,
+        type: 3}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ResetCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886255394296307291, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392110217022379775, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392110217177123123, guid: 22a6e43bc1178704e9db36c93a59ddf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7392110217576136458, guid: 22a6e43bc1178704e9db36c93a59ddf9,
         type: 3}
