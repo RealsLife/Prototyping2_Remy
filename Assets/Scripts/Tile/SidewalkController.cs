@@ -11,16 +11,17 @@ public class SidewalkController : MonoBehaviour
 
     [Header("Player Prefab")]
     [SerializeField]private GameObject _playerSpawnerPrefab;
+    static GameObject _playerSpawnerInstance = null;
     static private GameObject _player = null;
-    static GameObject _spawnPlayer = null;
+
+
     [Header("Objective Prefab")]
     [SerializeField] private GameObject _objectivePrefab;
-    static private PathCreator _randomSideWalk;
-    static private PathCreator _previousSideWalk = null;
+    static private GameObject _objectiveInstance = null;
+
+    private PathCreator _randomSideWalk;
+    private PathCreator _previousSideWalk = null;
     private float _randomSideWalkOffset;
-    static bool _spawnedPlayer = false;
-    static bool _spawnedObjective = false;
-    static bool _reset = true;
     private void Start()
     {
         CheckIfMainTile();
@@ -67,14 +68,14 @@ public class SidewalkController : MonoBehaviour
 
     void InitializePlayerBegin()//player location is the start of the level
     {
-        if (_spawnPlayer == null)//eerste ronde
+        if (_playerSpawnerInstance == null)//eerste ronde
         {
-            _spawnPlayer = Instantiate(_playerSpawnerPrefab);
-            AssignRandomPositionOnBezier(TakeRandomSideWalk(), _spawnPlayer);
+            _playerSpawnerInstance = Instantiate(_playerSpawnerPrefab);
+            AssignRandomPositionOnBezier(TakeRandomSideWalk(), _playerSpawnerInstance);
         }
         else//twee ronde objecte
         {
-            _player = _spawnPlayer.transform.GetChild(0).gameObject;
+            _player = _playerSpawnerInstance.transform.GetChild(0).gameObject;
             CharacterController cc = _player.GetComponent<CharacterController>();
             cc.enabled = false;
             AssignRandomPositionOnBezier(TakeRandomSideWalk(), _player);
@@ -85,13 +86,11 @@ public class SidewalkController : MonoBehaviour
 
     void InitializeObjectiveEnd()//objective is where the player should end the level
     {
-        if (!_objectivePrefab.scene.IsValid() && !_spawnedObjective)
+        if (_objectiveInstance == null)
         {
-          //  Debug.Log("instantiate player");
-            _spawnedObjective = true;
-            _objectivePrefab = Instantiate(_objectivePrefab);
+            _objectiveInstance = Instantiate(_objectivePrefab);
         }
-        AssignRandomPositionOnBezier(TakeRandomSideWalk(), _objectivePrefab);
+        AssignRandomPositionOnBezier(TakeRandomSideWalk(), _objectiveInstance);
     }
 
     //void InitalizeProps //How many props should spawn randomly on the map
