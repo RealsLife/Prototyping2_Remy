@@ -14,10 +14,7 @@ public class LevelEndDirector : MonoBehaviour
     public UIPopup UIPopup;
 
     private void Start()
-    {
-        PauseMenu._isGamePauzed = false;
-        Cursor.lockState = CursorLockMode.Locked;
-
+    {       
         //when a new tile is manually generated, feedback isn't added because it hasn't done FindChallenges() again
         FindChallenges();
         AssignUIPopupToChallenges();
@@ -54,5 +51,11 @@ public class LevelEndDirector : MonoBehaviour
 
         UILevelEndFeedback.UpdateFeedbackTextField(feedbackPositive, feedbackNegative, PlayerScore);
         UILevelEndFeedback.gameObject.SetActive(true);
+    }
+
+    public void ReactivateControlls()
+    {
+        PauseMenu._isGamePauzed = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
