@@ -67,20 +67,16 @@ public class SidewalkController : MonoBehaviour
 
     void InitializePlayerBegin()//player location is the start of the level
     {
-        Debug.Log("player begin method");
         if (_spawnPlayer == null)//eerste ronde
         {
-            Debug.Log("player instantiate");
             _spawnPlayer = Instantiate(_playerSpawnerPrefab);
             AssignRandomPositionOnBezier(TakeRandomSideWalk(), _spawnPlayer);
-            //  _player = _playerSpawnerPrefab.transform.GetChild(0).gameObject;
         }
         else//twee ronde objecte
         {
             _player = _spawnPlayer.transform.GetChild(0).gameObject;
             CharacterController cc = _player.GetComponent<CharacterController>();
             cc.enabled = false;
-            Debug.Log(_player);
             AssignRandomPositionOnBezier(TakeRandomSideWalk(), _player);
             cc.enabled = true;
         }
