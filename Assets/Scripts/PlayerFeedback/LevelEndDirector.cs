@@ -58,4 +58,9 @@ public class LevelEndDirector : MonoBehaviour
         PauseMenu._isGamePauzed = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public void ResetDirector()
+    {
+        PlayerScore = 10;
+    }
 }
