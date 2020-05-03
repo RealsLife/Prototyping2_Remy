@@ -34,6 +34,7 @@ public class CameraSwitch : MonoBehaviour
             TPS.enabled = true;
             FPS.enabled = false;
             CharacterAnimator.SetBool("Idle", true);
+            Reset = false;
         }
     }
     private void OnTriggerEnter(Collider other)

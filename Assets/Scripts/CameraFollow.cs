@@ -33,6 +33,7 @@ public class CameraFollow : MonoBehaviour
         if (Reset == true) //reset orbit camera
         {
             _distantTravelled = 0;
+            Reset = false;
  
         }
 
