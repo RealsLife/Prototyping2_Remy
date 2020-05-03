@@ -8,16 +8,20 @@ public class CameraFollow : MonoBehaviour
     public EndOfPathInstruction End;
     public float Speed;
     public bool Reset = false;
-    
+
 
     private float _distantTravelled;
 
     private void Start()
     {
-        
-        
+
+
     }
-    
+
+    public void ResetCamera(bool value)
+    {
+    Reset = value;
+    }
     // Update is called once per frame
     void Update()
     {

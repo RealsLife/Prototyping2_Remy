@@ -11,7 +11,12 @@ public class CameraSwitch : MonoBehaviour
     public PathCreator PathCreator;
     public GameObject Character;
 
-    public bool Reset = false;
+    static public bool Reset = false;
+
+    public void ResetCamera(bool value)
+    {
+        Reset = value;
+    }
 
     private void Start()
     {
