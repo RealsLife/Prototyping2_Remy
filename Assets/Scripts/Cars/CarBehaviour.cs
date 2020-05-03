@@ -12,14 +12,14 @@ public class CarBehaviour : MonoBehaviour
     private float _maxSpeed;
 
     [SerializeField] private GameObject _carCheck;
-    [SerializeField] private GameObject _player_TraficLightCheck;
-    [SerializeField] private GameObject _player_TraficLightCheckClose;
+    [SerializeField] private GameObject _player_TrafficLightCheck;
+    [SerializeField] private GameObject _player_TrafficLightCheckClose;
 
     private bool _isCarInRange;
     private bool _isPlayerInRange;
     private bool _isPlayerClose;
-    private bool _isTraficLightRed;
-    private bool _isTraficLightRedClose;
+    private bool _isTrafficLightRed;
+    private bool _isTrafficLightRedClose;
 
     public void Start()
     {
@@ -30,16 +30,16 @@ public class CarBehaviour : MonoBehaviour
     {
         SetBools();
         SetSpeed();
-        Movement();    
+        //Movement();
     }
 
     private void SetBools()
     {
-        _isPlayerInRange = _player_TraficLightCheck.GetComponent<CarColliderCheck>()._isActive[0];
+        _isPlayerInRange = _player_TrafficLightCheck.GetComponent<CarColliderCheck>()._isActive[0];
         _isCarInRange = _carCheck.GetComponent<CarColliderCheck>()._isActive[0];
-        _isPlayerClose = _player_TraficLightCheckClose.GetComponent<CarColliderCheck>()._isActive[0];
-        _isTraficLightRed = _player_TraficLightCheck.GetComponent<CarColliderCheck>()._isActive[1];
-        _isTraficLightRedClose = _player_TraficLightCheckClose.GetComponent<CarColliderCheck>()._isActive[1];
+        _isPlayerClose = _player_TrafficLightCheckClose.GetComponent<CarColliderCheck>()._isActive[0];
+        _isTrafficLightRed = _player_TrafficLightCheck.GetComponent<CarColliderCheck>()._isActive[1];
+        _isTrafficLightRedClose = _player_TrafficLightCheckClose.GetComponent<CarColliderCheck>()._isActive[1];
     }
 
     private void SetSpeed()
@@ -49,7 +49,7 @@ public class CarBehaviour : MonoBehaviour
         if (_isCarInRange)
         {
             _speed = 0;
-        }else if (_isPlayerInRange || _isTraficLightRed)
+        }else if (_isPlayerInRange || _isTrafficLightRed)
         {
             _speed -= _maxSpeed/5 * Time.deltaTime;
 

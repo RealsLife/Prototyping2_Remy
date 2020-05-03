@@ -22,9 +22,12 @@ public class PathFollow : MonoBehaviour
     public PathController _pathController;
     public CarSpawnerBehaviour CarSpawnerOrigin { get; set; }
 
+    private CarBehaviour _carBehaviour;
+
     void Start()
     {
-        _speed = gameObject.GetComponent<CarBehaviour>().Speed;
+        _carBehaviour = gameObject.GetComponent<CarBehaviour>();
+        //_speed = gameObject.GetComponent<CarBehaviour>().Speed;
         //_carOffsetFromCenter = 2.27f; //transform.GetComponentInChildren<BoxCollider>().
     }
 
@@ -32,6 +35,7 @@ public class PathFollow : MonoBehaviour
     {
         MoveCarAlongPath();
         RotateCarAlongPath();
+        UpdateSpeed();
         DestroyCarOnTileExit();
         //_carDistanceFromCenter = transform.forward.normalized * _carOffsetFromCenter;
     }
@@ -45,6 +49,11 @@ public class PathFollow : MonoBehaviour
             //CarFactory.DecreaseAmountOfCars();
             //Debug.Log("destroyed");
         }
+    }
+
+    private void UpdateSpeed()
+    {
+        _speed = _carBehaviour.Speed;
     }
 
     private void MoveCarAlongPath()

@@ -21,9 +21,9 @@ TagManager:
   - 
   - 
   - ChallengeRaycast
-  - 
-  - 
-  - 
+  - TrafficLights
+  - Car
+  - CarCheckCollider
   - 
   - 
   - 

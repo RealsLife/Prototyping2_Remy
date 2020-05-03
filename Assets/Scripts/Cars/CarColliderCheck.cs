@@ -12,7 +12,7 @@ public class CarColliderCheck : MonoBehaviour
     {
         for (int i = 0; i < _tag.Length; i++)
         {
-            if (other.tag == _tag[0])
+            if (other.transform.root.tag == _tag[0])
             {
                 _isActive[0] = true;
             }
@@ -23,7 +23,7 @@ public class CarColliderCheck : MonoBehaviour
     {
         for (int i = 0; i < _tag.Length; i++)
         {
-            if (other.tag == _tag[0])
+            if (other.transform.root.tag == _tag[0])
             {
                 _isActive[0] = false;
             }

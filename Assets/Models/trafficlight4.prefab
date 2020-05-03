@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5384087100143978861}
   - component: {fileID: 1486540166533357417}
   - component: {fileID: 679336886771022251}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GreenLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 6910024456293806730}
   - component: {fileID: 7597993295209667033}
   - component: {fileID: 607713946601253861}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RedLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 2950933073985168087}
   - component: {fileID: 8921446786805898798}
   - component: {fileID: 9219940244385471896}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trafficlight4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,9 +269,11 @@ MonoBehaviour:
     type: 2}
   _orangeLightUnlitMaterial: {fileID: 2100000, guid: fede21a2c43c9fe4e95d218a6c370c4d,
     type: 2}
+  _lightStartposition: 0
   _timeLightStaysRed: 5
   _timeLightStaysOrange: 3
   _timeLightStaysGreen: 5
+  _redLightCollider: {fileID: 0}
 --- !u!1 &8298149993943583394
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +285,7 @@ GameObject:
   - component: {fileID: 7409118971040636450}
   - component: {fileID: 3588819967016179485}
   - component: {fileID: 3693019126910713855}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OrangeLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
