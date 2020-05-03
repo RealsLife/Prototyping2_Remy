@@ -541,6 +541,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3522820982358821144, guid: 8ee3d981c6132b9479189c9a39f33123,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3522820982358821145, guid: 8ee3d981c6132b9479189c9a39f33123,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -570,6 +575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265924492454085209, guid: 8ee3d981c6132b9479189c9a39f33123,
+        type: 3}
+      propertyPath: m_Text
+      value: Remy's Traffic Adventure
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee3d981c6132b9479189c9a39f33123, type: 3}

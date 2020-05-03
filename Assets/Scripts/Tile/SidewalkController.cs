@@ -95,15 +95,15 @@ public class SidewalkController : MonoBehaviour
 
     //void InitalizeProps //How many props should spawn randomly on the map
 
-  
+    
 
-    void AddOffset()
-    {
-       _randomSideWalkOffset = Random.Range(0f, _sideWalkWidth);   //add offset
-    }
+    //void AddOffset()
+    //{
+    //   _randomSideWalkOffset = Random.Range(0f, _sideWalkWidth);   //add offset
+    //}
 
-    void CheckIfSpaceIsFree()
-    {
-        //als er al een object staat respawn current object
-    }
+    //void CheckIfSpaceIsFree()
+    //{
+    //    //als er al een object staat respawn current object
+    //}
 }
