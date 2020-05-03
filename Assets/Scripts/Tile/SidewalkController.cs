@@ -8,13 +8,15 @@ public class SidewalkController : MonoBehaviour
     [Header("Sidewalk Prefabs")]
     [SerializeField] private PathCreator[] _sideWalks;
     [SerializeField] private float _sideWalkWidth;
+
     [Header("Player Prefab")]
     [SerializeField]private GameObject _playerSpawnerPrefab;
-
+    static private GameObject _player = null;
+    static GameObject _spawnPlayer = null;
     [Header("Objective Prefab")]
     [SerializeField] private GameObject _objectivePrefab;
-    private PathCreator _randomSideWalk;
-    private PathCreator _previousSideWalk = null;
+    static private PathCreator _randomSideWalk;
+    static private PathCreator _previousSideWalk = null;
     private float _randomSideWalkOffset;
     static bool _spawnedPlayer = false;
     static bool _spawnedObjective = false;
@@ -29,13 +31,14 @@ public class SidewalkController : MonoBehaviour
         CheckIfMainTile();
     }
 
-    void CheckIfMainTile()
+    void CheckIfMainTile()//check of het een maintile is en als reset op true staat instantiate player + objecte als ze al bestaan herpositioneer gewoon
     {
-        if (!this.GetComponent<Tile>().TileIsEnvironmentTile && _reset)
+        if (!this.GetComponent<Tile>().TileIsEnvironmentTile && TriggerFeedback.InitializeLevelReset)
         {
+            TriggerFeedback.InitializeLevelReset = false;
             InitializePlayerBegin();
             InitializeObjectiveEnd();
-            _reset = false;
+           
         }
     }
 
@@ -55,6 +58,7 @@ public class SidewalkController : MonoBehaviour
 
     private void AssignRandomPositionOnBezier(PathCreator bezier,GameObject target)
     {
+        Debug.Log("player get random position");
         float random_t = Random.Range(0f, 1f);
        // AddOffset()
         target.transform.position = bezier.path.GetPointAtTime(random_t) + new Vector3(0, 0.05f, 0);
@@ -63,19 +67,31 @@ public class SidewalkController : MonoBehaviour
 
     void InitializePlayerBegin()//player location is the start of the level
     {
-        if (!_playerSpawnerPrefab.scene.IsValid() && !_spawnedPlayer)
+        Debug.Log("player begin method");
+        if (_spawnPlayer == null)//eerste ronde
         {
-            _spawnedPlayer = true;
-        _playerSpawnerPrefab = Instantiate(_playerSpawnerPrefab);
+            Debug.Log("player instantiate");
+            _spawnPlayer = Instantiate(_playerSpawnerPrefab);
+            AssignRandomPositionOnBezier(TakeRandomSideWalk(), _spawnPlayer);
+            //  _player = _playerSpawnerPrefab.transform.GetChild(0).gameObject;
         }
-        AssignRandomPositionOnBezier(TakeRandomSideWalk(), _playerSpawnerPrefab);
+        else//twee ronde objecte
+        {
+            _player = _spawnPlayer.transform.GetChild(0).gameObject;
+            CharacterController cc = _player.GetComponent<CharacterController>();
+            cc.enabled = false;
+            Debug.Log(_player);
+            AssignRandomPositionOnBezier(TakeRandomSideWalk(), _player);
+            cc.enabled = true;
+        }
+      
     }
 
     void InitializeObjectiveEnd()//objective is where the player should end the level
     {
         if (!_objectivePrefab.scene.IsValid() && !_spawnedObjective)
         {
-            Debug.Log("instantiate player");
+          //  Debug.Log("instantiate player");
             _spawnedObjective = true;
             _objectivePrefab = Instantiate(_objectivePrefab);
         }
@@ -88,20 +104,11 @@ public class SidewalkController : MonoBehaviour
 
     void AddOffset()
     {
-       _randomSideWalkOffset = Random.Range(0f, _sideWalkWidth);   
+       _randomSideWalkOffset = Random.Range(0f, _sideWalkWidth);   //add offset
     }
 
     void CheckIfSpaceIsFree()
     {
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Objective")
-        {
-            Debug.Log("RESEEET");
-            _reset = true;
-        }
+        //als er al een object staat respawn current object
     }
 }
