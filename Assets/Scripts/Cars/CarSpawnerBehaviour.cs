@@ -6,9 +6,11 @@ using UnityEngine;
 public class CarSpawnerBehaviour : MonoBehaviour
 {
     public CarFactory factory;
+    [SerializeField] private float _secondsBetweenSpawns = 1;
     [SerializeField] private bool _spawnCars;
     [SerializeField] private bool _spawnSingleCarOnPlay;
-    [SerializeField] private float _secondsBetweenSpawns = 1;
+    [Range(1, 50)][SerializeField] private int _maximumAmountOfCars;
+    private int _currentAmountOfCarsSpawned = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +18,8 @@ public class CarSpawnerBehaviour : MonoBehaviour
         StartCoroutine(SpawnCar());
         if(_spawnSingleCarOnPlay)
         {
-            factory.SpawnCar(this.transform.position, transform.forward);
+            factory.SpawnCar(this.transform.position, transform.forward, this);
+            IncreaseAmountOfCars();
         }
     }
 
@@ -24,15 +27,38 @@ public class CarSpawnerBehaviour : MonoBehaviour
     {
         while (true)
         {
-            if (_spawnCars)
+            if (_spawnCars && IsAbleToSpawnCars())
             {
                 yield return new WaitForSeconds(_secondsBetweenSpawns);
-                factory.SpawnCar(this.gameObject.transform.position, transform.forward);
+                factory.SpawnCar(this.gameObject.transform.position, transform.forward, this);
+                IncreaseAmountOfCars();
             }
             else
             {
                 yield return null;
             }
         }
+    }
+
+    private bool IsAbleToSpawnCars()
+    {
+        if(_currentAmountOfCarsSpawned < _maximumAmountOfCars)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void IncreaseAmountOfCars()
+    {
+        _currentAmountOfCarsSpawned++;
+    }
+
+    public void DecreaseAmountOfCars()
+    {
+        _currentAmountOfCarsSpawned--;
     }
 }
