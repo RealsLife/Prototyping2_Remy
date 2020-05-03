@@ -428,7 +428,7 @@ PrefabInstance:
     - target: {fileID: 4334246460214977177, guid: a84bc91aeb697674dbca5fc992cbfea3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4334246460214977183, guid: a84bc91aeb697674dbca5fc992cbfea3,
         type: 3}
@@ -583,6 +583,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tile_Straight (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830081574843848285, guid: 9a81c042a48805945b77b89812192fdc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a81c042a48805945b77b89812192fdc, type: 3}
@@ -786,6 +791,11 @@ PrefabInstance:
       propertyPath: _spawnSingleCarOnPlay
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4334246460214977176, guid: a84bc91aeb697674dbca5fc992cbfea3,
+        type: 3}
+      propertyPath: _maximumAmountOfCars
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4334246460214977177, guid: a84bc91aeb697674dbca5fc992cbfea3,
         type: 3}
       propertyPath: m_Name
@@ -893,7 +903,7 @@ PrefabInstance:
     - target: {fileID: 4334246460214977177, guid: a84bc91aeb697674dbca5fc992cbfea3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4334246460214977183, guid: a84bc91aeb697674dbca5fc992cbfea3,
         type: 3}
@@ -1191,6 +1201,11 @@ PrefabInstance:
       propertyPath: _spawnSingleCarOnPlay
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4334246460214977176, guid: a84bc91aeb697674dbca5fc992cbfea3,
+        type: 3}
+      propertyPath: _maximumAmountOfCars
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4334246460214977177, guid: a84bc91aeb697674dbca5fc992cbfea3,
         type: 3}
       propertyPath: m_Name
@@ -1354,6 +1369,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tile_Straight (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830081574843848285, guid: 9a81c042a48805945b77b89812192fdc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a81c042a48805945b77b89812192fdc, type: 3}
@@ -1540,7 +1560,7 @@ PrefabInstance:
     - target: {fileID: 6642031085094964983, guid: 4e0854637cdc397498c63e5d20af908f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.229496
+      value: 23.770374
       objectReference: {fileID: 0}
     - target: {fileID: 6642031085094964983, guid: 4e0854637cdc397498c63e5d20af908f,
         type: 3}
@@ -1956,6 +1976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tile_Intersection
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457564791144484908, guid: 5ce0e4b52ae4fdc40b02e8e35bca30c5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7457564791144484909, guid: 5ce0e4b52ae4fdc40b02e8e35bca30c5,
         type: 3}

@@ -20,6 +20,7 @@ public class PathFollow : MonoBehaviour
     public Transform _carRotationPoint;
 
     public PathController _pathController;
+    public CarSpawnerBehaviour CarSpawnerOrigin { get; set; }
 
     void Start()
     {
@@ -40,6 +41,8 @@ public class PathFollow : MonoBehaviour
         if (_distanceTravelledOnCurrentPath < -.5f || _distanceTravelledOnCurrentPath > 30.5f)
         {
             GameObject.Destroy(this.gameObject);
+            CarSpawnerOrigin.DecreaseAmountOfCars();
+            //CarFactory.DecreaseAmountOfCars();
             //Debug.Log("destroyed");
         }
     }
@@ -96,7 +99,7 @@ public class PathFollow : MonoBehaviour
     {
         if(other.transform.CompareTag("Road"))
         {
-            Debug.Log("TRIGGER ENTERED");
+            //Debug.Log("TRIGGER ENTERED");
             //_currentPathToFollow = GetClosestPathOnTile(other);
 
             _pathController = other.transform.root.GetComponentInChildren<PathController>();

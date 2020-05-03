@@ -20,7 +20,10 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if (!PauseMenu._isGamePauzed)
+        {
+            Move();
+        }     
     }
 
     public void OnMove(InputAction.CallbackContext context)

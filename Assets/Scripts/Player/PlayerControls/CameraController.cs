@@ -28,7 +28,10 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        CameraRotation();
+        if (!PauseMenu._isGamePauzed)
+        {
+            CameraRotation();
+        }
     }
 
     public void OnRotate(InputAction.CallbackContext context)

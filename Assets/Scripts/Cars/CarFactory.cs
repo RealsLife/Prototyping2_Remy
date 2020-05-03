@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,13 +12,14 @@ public class CarFactory : ScriptableObject
     public GameObject[] CarPrefabs;
     public ColorGenerator MyColorGenerator;
 
-    public void SpawnCar(Vector3 position, Vector3 forwardDirection)
+    public void SpawnCar(Vector3 position, Vector3 forwardDirection, CarSpawnerBehaviour carSpawnerOrigin)
     {
         GameObject carToSpawn = CarPrefabs[Random.Range(0, CarPrefabs.Length)];
         
         Quaternion carLookDirection = GetForwardDirection(carToSpawn, forwardDirection);
 
         carToSpawn = GameObject.Instantiate(carToSpawn, position, carLookDirection);
+        carToSpawn.GetComponent<PathFollow>().CarSpawnerOrigin = carSpawnerOrigin;
         AssignColorToCar(carToSpawn);
     }
 
