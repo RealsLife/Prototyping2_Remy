@@ -22,10 +22,6 @@ public class SidewalkController : MonoBehaviour
     private PathCreator _randomSideWalk;
     private PathCreator _previousSideWalk = null;
     private float _randomSideWalkOffset;
-
-    [Header("Prop Prefabs")]
-    public GameObject[] PropPrefabs;
-    public int PropAmount;
     private void Start()
     {
         CheckIfMainTile();
@@ -43,7 +39,7 @@ public class SidewalkController : MonoBehaviour
             TriggerFeedback.InitializeLevelReset = false;
             InitializePlayerBegin();
             InitializeObjectiveEnd();
-            InitializeProps(PropAmount);
+           
         }
     }
 
@@ -97,21 +93,6 @@ public class SidewalkController : MonoBehaviour
         AssignRandomPositionOnBezier(TakeRandomSideWalk(), _objectiveInstance);
     }
 
-    int ChooseRandomProp()
-    {
-        return Random.Range(0, PropPrefabs.Length - 1);
-    }
-
-
-    void InitializeProps(int propAmount)
-    {
-        for(int i = 0;i < propAmount;i++)
-        {
-            GameObject prop = Instantiate(PropPrefabs[ChooseRandomProp()]);
-            Debug.Log("spawn prop");
-            AssignRandomPositionOnBezier(TakeRandomSideWalk(), prop);
-        }
-    }
     //void InitalizeProps //How many props should spawn randomly on the map
 
     

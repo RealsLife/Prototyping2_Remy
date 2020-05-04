@@ -1352,7 +1352,6 @@ MonoBehaviour:
   _randomActiveTileStreetDirection: 0
   DirectionFromMainTile: 0
   TileIsEnvironmentTile: 0
-  Type: 0
 --- !u!23 &9105835302892779375
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1455,11 +1454,6 @@ MonoBehaviour:
     type: 3}
   _objectivePrefab: {fileID: 221122858490737821, guid: 32a0cf9cf45bea740a7d49ef754d3a85,
     type: 3}
-  PropPrefabs:
-  - {fileID: 7122000570888814154, guid: 17464be38a991604db0834c91545b894, type: 3}
-  - {fileID: 1350815024096847235, guid: a609528760a227747b47182e4faa59df, type: 3}
-  - {fileID: 7242270764747653088, guid: 66421c0923f15514d91c30cddae82d26, type: 3}
-  PropAmount: 10
 --- !u!1 &5830081575183567365
 GameObject:
   m_ObjectHideFlags: 0
