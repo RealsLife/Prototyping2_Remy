@@ -47,4 +47,4 @@ MonoBehaviour:
   _secondsBetweenSpawns: 2.5
   _spawnCars: 1
   _spawnSingleCarOnPlay: 0
-  _maximumAmountOfCars: 3
+  _maximumAmountOfCars: 2
