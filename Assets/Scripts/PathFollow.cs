@@ -111,7 +111,7 @@ public class PathFollow : MonoBehaviour
             //Debug.Log("TRIGGER ENTERED");
             //_currentPathToFollow = GetClosestPathOnTile(other);
 
-            _pathController = other.transform.root.GetComponentInChildren<PathController>();
+            _pathController = other.transform.parent.GetComponentInChildren<PathController>();
 
             _currentPathToFollow = GetRandomPath(transform.position);
 
@@ -136,13 +136,13 @@ public class PathFollow : MonoBehaviour
     private PathCreator GetClosestPathOnTile(Collider other)
     {
         Vector3 carPosition = transform.position;
-        PathCreator closestPath = other.transform.root.GetComponentInChildren<PathCreator>();
+        PathCreator closestPath = other.transform.parent.GetComponentInChildren<PathCreator>();
 
-        for (int i = 0; i < other.transform.root.GetComponentsInChildren<PathCreator>().Length; i++)
+        for (int i = 0; i < other.transform.parent.GetComponentsInChildren<PathCreator>().Length; i++)
         {
-            if (Vector3.Distance(closestPath.path.GetClosestPointOnPath(carPosition), carPosition) > Vector3.Distance(other.transform.root.GetComponentsInChildren<PathCreator>()[i].path.GetClosestPointOnPath(carPosition), carPosition))
+            if (Vector3.Distance(closestPath.path.GetClosestPointOnPath(carPosition), carPosition) > Vector3.Distance(other.transform.parent.GetComponentsInChildren<PathCreator>()[i].path.GetClosestPointOnPath(carPosition), carPosition))
             {
-                closestPath = other.transform.root.GetComponentsInChildren<PathCreator>()[i];
+                closestPath = other.transform.parent.GetComponentsInChildren<PathCreator>()[i];
             }
         }
         return closestPath;

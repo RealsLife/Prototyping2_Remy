@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factory: {fileID: 11400000, guid: 8ae87938a558aa84095fccd641caa3de, type: 2}
+  _secondsBetweenSpawns: 1.5
   _spawnCars: 1
-  _secondsBetweenSpawns: 1
-  _spawnPosition: {x: 0, y: 0, z: 0}
-  _forwardDirection: 0
+  _spawnSingleCarOnPlay: 0
+  _maximumAmountOfCars: 3

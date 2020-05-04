@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373986523600012942}
   - component: {fileID: 8453751350152182781}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 5904915725602094072}
   - component: {fileID: 5904915725602094073}
   - component: {fileID: 5904915725602094074}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: light_Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 5904915725730600589}
   - component: {fileID: 5904915725730600590}
   - component: {fileID: 5904915725730600591}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: light_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 5904915725783133631}
   - component: {fileID: 5904915725783133624}
   - component: {fileID: 5904915725783133625}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: light_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5904915725804015940}
   - component: {fileID: 5904915725804015995}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TrafficLight_WithOrange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 5904915725892941788}
   - component: {fileID: 5904915725892941789}
   - component: {fileID: 5904915725892941790}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 5904915727095029851}
   - component: {fileID: 5904915727095029924}
   - component: {fileID: 5904915727095029925}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

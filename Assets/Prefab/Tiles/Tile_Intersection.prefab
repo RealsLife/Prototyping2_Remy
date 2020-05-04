@@ -1191,7 +1191,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 90
       flipNormals: 0
-    vertexPathUpToDate: 0
+    vertexPathUpToDate: 1
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 1
@@ -6598,10 +6598,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7457564791144484909}
     m_Modifications:
+    - target: {fileID: 389896702725899133, guid: e792ae912daf45444b1a756110ac4921,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 457340009889132412, guid: e792ae912daf45444b1a756110ac4921,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1622335719872040748, guid: e792ae912daf45444b1a756110ac4921,
         type: 3}
       propertyPath: m_Name
       value: trafficlight2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622335719872040748, guid: e792ae912daf45444b1a756110ac4921,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2366897124923178303, guid: e792ae912daf45444b1a756110ac4921,
         type: 3}
@@ -6662,6 +6677,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3.1173973
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018486497606569977, guid: e792ae912daf45444b1a756110ac4921,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701437256123846640, guid: e792ae912daf45444b1a756110ac4921,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718628561292942543, guid: e792ae912daf45444b1a756110ac4921,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7323517837507257419, guid: e792ae912daf45444b1a756110ac4921,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031914472329171879, guid: e792ae912daf45444b1a756110ac4921,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e792ae912daf45444b1a756110ac4921, type: 3}
