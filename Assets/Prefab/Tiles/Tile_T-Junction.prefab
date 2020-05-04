@@ -1674,6 +1674,7 @@ MonoBehaviour:
   _randomActiveTileStreetDirection: 0
   DirectionFromMainTile: 0
   TileIsEnvironmentTile: 0
+  Type: 2
 --- !u!33 &8290149205175648147
 MeshFilter:
   m_ObjectHideFlags: 0

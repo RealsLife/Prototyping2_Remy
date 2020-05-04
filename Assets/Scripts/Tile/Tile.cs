@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tile : MonoBehaviour
-
 {
     [SerializeField] Directions _directions;
     bool[] Directions = new bool[4];
@@ -12,6 +11,15 @@ public class Tile : MonoBehaviour
     public int _randomActiveTileStreetDirection;
     public int DirectionFromMainTile;
     public bool TileIsEnvironmentTile;
+    public TileType Type;
+
+    public enum TileType
+    {
+        Straight,
+        Bend,
+        T_Junction,
+        Intersection
+    }
 
     private void Awake()
     {
@@ -20,6 +28,7 @@ public class Tile : MonoBehaviour
     }
 
     
+
     public void InitializeActiveDirections()
     {
         Directions[0] = _directions.LeftEnabled;

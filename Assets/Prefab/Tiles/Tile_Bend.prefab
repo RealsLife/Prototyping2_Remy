@@ -2310,6 +2310,7 @@ MonoBehaviour:
   _randomActiveTileStreetDirection: 0
   DirectionFromMainTile: 0
   TileIsEnvironmentTile: 0
+  Type: 1
 --- !u!23 &725851343982837516
 MeshRenderer:
   m_ObjectHideFlags: 0
