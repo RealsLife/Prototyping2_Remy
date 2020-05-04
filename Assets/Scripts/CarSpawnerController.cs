@@ -18,23 +18,26 @@ public class CarSpawnerController : MonoBehaviour
             _currentTileZPosition = (int)gameObject.transform.parent.position.z;
             _currentTileXPosition = (int)gameObject.transform.parent.position.x;
 
-            
-
             if (_tile.Type == Tile.TileType.Straight)
             {
-                //EnableCarSpawnersForStraightTile();
+                EnableCarSpawnersForStraightTile();
             }
             else if(_tile.Type == Tile.TileType.Bend)
             {
-                //EnableCarSpawnersForBendTile();
+                EnableCarSpawnersForBendTile();
             }
             else if(_tile.Type == Tile.TileType.T_Junction)
             {
                 EnableCarSpawnersForTJunctionTile();
-                Debug.Log(gameObject.transform.parent.name);
-                Debug.Log(_currentTileRotation);
-                Debug.Log(_currentTileZPosition);
-                Debug.Log(_currentTileXPosition);
+                
+            }
+            else if(_tile.Type == Tile.TileType.Intersection)
+            {
+                EnableCarSpawnersForIntersectionTile();
+                //Debug.Log(gameObject.transform.parent.name);
+                //Debug.Log(_currentTileRotation);
+                //Debug.Log(_currentTileZPosition);
+                //Debug.Log(_currentTileXPosition);
             }
         }
     }
@@ -234,6 +237,62 @@ public class CarSpawnerController : MonoBehaviour
             {
                 CarSpawnerArray[0].gameObject.SetActive(true);
                 CarSpawnerArray[2].gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void EnableCarSpawnersForIntersectionTile()
+    {
+        if (_currentTileRotation == 0)
+        {
+            if (_currentTileZPosition < 0 || _currentTileZPosition > 0)
+            {
+                CarSpawnerArray[5].gameObject.SetActive(true);
+                CarSpawnerArray[7].gameObject.SetActive(true);
+            }
+            else if (_currentTileXPosition > 0 || _currentTileXPosition < 0)
+            {
+                CarSpawnerArray[0].gameObject.SetActive(true);
+                CarSpawnerArray[2].gameObject.SetActive(true);
+            }
+        }
+        else if (_currentTileRotation == 90)
+        {
+            if (_currentTileZPosition > 0 || _currentTileZPosition < 0)
+            {
+                CarSpawnerArray[0].gameObject.SetActive(true);
+                CarSpawnerArray[2].gameObject.SetActive(true);
+            }
+            else if (_currentTileXPosition > 0 || _currentTileXPosition < 0)
+            {
+                CarSpawnerArray[5].gameObject.SetActive(true);
+                CarSpawnerArray[7].gameObject.SetActive(true);
+            }
+        }
+        else if (_currentTileRotation == 180)
+        {
+            if (_currentTileZPosition > 0 || _currentTileZPosition < 0)
+            {
+                CarSpawnerArray[5].gameObject.SetActive(true);
+                CarSpawnerArray[7].gameObject.SetActive(true);
+            }
+            else if (_currentTileXPosition > 0 || _currentTileXPosition < 0)
+            {
+                CarSpawnerArray[0].gameObject.SetActive(true);
+                CarSpawnerArray[2].gameObject.SetActive(true);
+            }
+        }
+        else if (_currentTileRotation == 270)
+        {
+            if (_currentTileZPosition > 0 || _currentTileZPosition < 0)
+            {
+                CarSpawnerArray[0].gameObject.SetActive(true);
+                CarSpawnerArray[2].gameObject.SetActive(true);
+            }
+            else if(_currentTileXPosition > 0 || _currentTileXPosition < 0)
+            {
+                CarSpawnerArray[5].gameObject.SetActive(true);
+                CarSpawnerArray[7].gameObject.SetActive(true);
             }
         }
     }
