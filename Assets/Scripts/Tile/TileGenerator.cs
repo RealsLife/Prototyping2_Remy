@@ -15,7 +15,7 @@ public class TileGenerator : MonoBehaviour
         GenerateNewTile();
         GenerateTileEnvironment();
         SpawnTile = false;
-        Debug.Log("SPAWN NIEUWE MAINTILE");
+        //Debug.Log("SPAWN NIEUWE MAINTILE");
     }
     void Update()
     {

@@ -23,6 +23,7 @@ public class PathFollow : MonoBehaviour
     public CarSpawnerBehaviour CarSpawnerOrigin { get; set; }
 
     private CarBehaviour _carBehaviour;
+    private bool _destroyTriggered;
 
     void Start()
     {
@@ -44,10 +45,14 @@ public class PathFollow : MonoBehaviour
     {
         if (_distanceTravelledOnCurrentPath < -.5f || _distanceTravelledOnCurrentPath > 30.5f)
         {
-            GameObject.Destroy(this.gameObject);
-            CarSpawnerOrigin.DecreaseAmountOfCars();
-            //CarFactory.DecreaseAmountOfCars();
-            //Debug.Log("destroyed");
+            if(_destroyTriggered == false)
+            {
+                gameObject.transform.position = new Vector3(999, 999, 999);
+                //setting the position of the car far away before destroying it triggers OnTriggerExit(), which is a solution to a bug causing cars to stop driving if they immediately drive behind a car which is getting destroyed
+                CarSpawnerOrigin.DecreaseAmountOfCars();
+                GameObject.Destroy(this.gameObject, .1f);
+                _destroyTriggered = true;
+            }
         }
     }
 

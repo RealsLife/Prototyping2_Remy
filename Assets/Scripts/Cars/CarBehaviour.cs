@@ -11,14 +11,16 @@ public class CarBehaviour : MonoBehaviour
     [SerializeField] private float _speed;
     private float _maxSpeed;
 
-    [SerializeField] private GameObject _carCheck;
-    [SerializeField] private GameObject _player_TrafficLightCheck;
-    [SerializeField] private GameObject _player_TrafficLightCheckClose;
+    [SerializeField] private CarColliderCheck _carCheck;
+    [SerializeField] private TrafficLightDetection _trafficLightDetection_Close;
+    [SerializeField] private TrafficLightDetection _trafficLightDetection_Far;
+    //[SerializeField] private CarColliderCheck _player_TrafficLightCheck;
+    //[SerializeField] private CarColliderCheck _player_TrafficLightCheckClose;
 
     private bool _isCarInRange;
     private bool _isPlayerInRange;
     private bool _isPlayerClose;
-    private bool _isTrafficLightRed;
+    private bool _isStoppingTrafficLightNearby;
     private bool _isTrafficLightRedClose;
 
     public void Start()
@@ -31,25 +33,29 @@ public class CarBehaviour : MonoBehaviour
         SetBools();
         SetSpeed();
         //Movement();
+        //Debug.Log(gameObject.GetInstanceID() + " " + gameObject.transform.forward);
     }
 
     private void SetBools()
     {
-        _isPlayerInRange = _player_TrafficLightCheck.GetComponent<CarColliderCheck>()._isActive[0];
-        _isCarInRange = _carCheck.GetComponent<CarColliderCheck>()._isActive[0];
-        _isPlayerClose = _player_TrafficLightCheckClose.GetComponent<CarColliderCheck>()._isActive[0];
-        _isTrafficLightRed = _player_TrafficLightCheck.GetComponent<CarColliderCheck>()._isActive[1];
-        _isTrafficLightRedClose = _player_TrafficLightCheckClose.GetComponent<CarColliderCheck>()._isActive[1];
+        //_isPlayerClose = _player_TrafficLightCheckClose._isActive[0];
+        //_isPlayerInRange = _player_TrafficLightCheck._isActive[0];
+
+        _isCarInRange = _carCheck._isActive[0];
+        //_isTrafficLightRedClose = _player_TrafficLightCheckClose._isActive[1];
+        //_isTrafficLightRed = _player_TrafficLightCheck._isActive[1];
+
+        _isStoppingTrafficLightNearby = _trafficLightDetection_Close.HasDetectedStoppingTrafficLight;
     }
 
     private void SetSpeed()
     {
         if (_speed <= 0.1) _speed = 0;
 
-        if (_isCarInRange)
+        if (_isCarInRange || _isStoppingTrafficLightNearby)
         {
             _speed = 0;
-        }else if (_isPlayerInRange || _isTrafficLightRed)
+        }else if (_isPlayerInRange)
         {
             _speed -= _maxSpeed/5 * Time.deltaTime;
 

@@ -59,7 +59,7 @@ public class SidewalkController : MonoBehaviour
 
     private void AssignRandomPositionOnBezier(PathCreator bezier,GameObject target)
     {
-        Debug.Log("player get random position");
+        //Debug.Log("player get random position");
         float random_t = Random.Range(0f, 1f);
        // AddOffset()
         target.transform.position = bezier.path.GetPointAtTime(random_t) + new Vector3(0, 0.05f, 0);

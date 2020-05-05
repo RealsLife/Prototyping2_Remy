@@ -11,6 +11,7 @@ TagManager:
   - OrbitCamera
   - Objective
   - Road
+  - TrafficLight
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - TrafficLights
   - Car
   - CarCheckCollider
-  - 
+  - Player
   - 
   - 
   - 

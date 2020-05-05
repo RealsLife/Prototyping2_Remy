@@ -10,11 +10,13 @@ public class CarColliderCheck : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        //Debug.Log(other.transform.parent.tag);
         for (int i = 0; i < _tag.Length; i++)
         {
-            if (other.transform.root.tag == _tag[0])
+            if (other.transform.parent.tag == _tag[i])
             {
-                _isActive[0] = true;
+                //Debug.Log("ACTIVITYEEE");
+                _isActive[i] = true;
             }
         }
     }
@@ -23,9 +25,9 @@ public class CarColliderCheck : MonoBehaviour
     {
         for (int i = 0; i < _tag.Length; i++)
         {
-            if (other.transform.root.tag == _tag[0])
+            if (other.transform.parent.tag == _tag[i])
             {
-                _isActive[0] = false;
+                _isActive[i] = false;
             }
         }
     }

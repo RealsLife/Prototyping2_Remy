@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6398452313177534953}
   m_Layer: 9
   m_Name: trafficlight4
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,6 +34,7 @@ Transform:
   - {fileID: 634791272534693953}
   - {fileID: 3600653876638364905}
   - {fileID: 1233735725784337290}
+  - {fileID: 236240473986188517}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
@@ -117,6 +118,7 @@ MonoBehaviour:
   _timeLightStaysOrange: 3
   _timeLightStaysGreen: 5
   _redLightCollider: {fileID: 1314878007449757408}
+  _forwardDirectionCarsAreStoppedAt: {fileID: 9173935629428245841}
 --- !u!1 &2104784432960638145
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,3 +400,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &9173935629428245841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236240473986188517}
+  m_Layer: 9
+  m_Name: DirectionCarsAreStoppedAt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &236240473986188517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173935629428245841}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4302510493753908866}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}

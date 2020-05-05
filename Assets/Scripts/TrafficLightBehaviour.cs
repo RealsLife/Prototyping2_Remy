@@ -67,8 +67,10 @@ public class TrafficLightBehaviour : MonoBehaviour
 
     private LightState _currentLightState;
 
-    [Header("Dependencies")] [SerializeField]
-    private Collider _redLightCollider;
+    [Header("Dependencies")] 
+    [SerializeField] private Collider _redLightCollider;
+    public Vector3 ForwardDirectionCarsAreStoppedAt { get { return _forwardDirectionCarsAreStoppedAt.transform.forward; } }
+    [SerializeField] private GameObject _forwardDirectionCarsAreStoppedAt;
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +83,7 @@ public class TrafficLightBehaviour : MonoBehaviour
         StartCoroutine(TrafficLightFunctionality());
     }
 
-    void Update()
+    void FixedUpdate()
     {
         UpdateLightTrigger();
     }
@@ -167,13 +169,15 @@ public class TrafficLightBehaviour : MonoBehaviour
 
     private void UpdateLightTrigger()
     {
-        if (GetLightState() == LightState.Red)
+        if (GetLightState() == LightState.Red || GetLightState() == LightState.Orange)
         {
-            _redLightCollider.enabled = true;
+            // _redLightCollider.enabled = true;
+            _redLightCollider.gameObject.transform.localPosition = Vector3.zero;
         }
         else
         {
-            _redLightCollider.enabled = false;
+            //_redLightCollider.enabled = false;
+            _redLightCollider.gameObject.transform.localPosition = new Vector3(0, 0, 3);
         }
     }
 }
