@@ -10,6 +10,7 @@ public class CameraSwitch : MonoBehaviour
     public Animator CharacterAnimator;
     public PathCreator PathCreator;
     public GameObject Character;
+    public CameraController CameraController; 
 
     static public bool Reset = false;
 
@@ -25,7 +26,8 @@ public class CameraSwitch : MonoBehaviour
         FPS.enabled = false;
         CharacterAnimator.SetBool("Idle", true);
         Character.GetComponent<CharacterController>().enabled = false;
-       
+        CameraController.enabled = false;
+
     }
     private void Update()
     {
@@ -47,6 +49,7 @@ public class CameraSwitch : MonoBehaviour
             FPS.enabled = true;
             CharacterAnimator.SetBool("Idle", false);
             Character.GetComponent<CharacterController>().enabled = true;
+            CameraController.enabled = true;
         }
     }
 }
