@@ -10,7 +10,8 @@ public class CameraSwitch : MonoBehaviour
     public Animator CharacterAnimator;
     public PathCreator PathCreator;
     public GameObject Character;
-    public CameraController CameraController; 
+    public CameraController CameraController;
+    public bool EnterTrigger = false;
 
     static public bool Reset = false;
 
@@ -44,7 +45,7 @@ public class CameraSwitch : MonoBehaviour
         if (other.CompareTag("TPSCamera"))
         {
             Debug.Log("test");
-
+            EnterTrigger = true;
             TPS.enabled = false;
             FPS.enabled = true;
             CharacterAnimator.SetBool("Idle", false);
