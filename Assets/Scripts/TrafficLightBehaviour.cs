@@ -171,13 +171,18 @@ public class TrafficLightBehaviour : MonoBehaviour
     {
         if (GetLightState() == LightState.Red || GetLightState() == LightState.Orange)
         {
-            // _redLightCollider.enabled = true;
-            _redLightCollider.gameObject.transform.localPosition = Vector3.zero;
+            if (_redLightCollider != null)
+            {
+                _redLightCollider.gameObject.transform.localPosition = Vector3.zero;
+            }
         }
         else
         {
-            //_redLightCollider.enabled = false;
-            _redLightCollider.gameObject.transform.localPosition = new Vector3(0, 0, 3);
+            if(_redLightCollider != null)
+            {
+                _redLightCollider.gameObject.transform.localPosition = new Vector3(0, 0, 3);
+            }
+            
         }
     }
 }

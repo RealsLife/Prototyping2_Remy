@@ -36,22 +36,27 @@ public class PathFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        MoveCarAlongPath();
-        RotateCarAlongPath();
-        UpdateSpeed();
-        DestroyCarOnTileExit();
-        //_carDistanceFromCenter = transform.forward.normalized * _carOffsetFromCenter;
+        if(_currentPathToFollow != null)
+        {
+            MoveCarAlongPath();
+            RotateCarAlongPath();
+            UpdateSpeed();
+            DestroyCarOnTileExit();
+        }
+        
     }
 
     private void DestroyCarOnTileExit()
     {
-        if (_distanceTravelledOnCurrentPath < -.5f || _distanceTravelledOnCurrentPath > 46.5f)
+        //if (_distanceTravelledOnCurrentPath < -.5f || _distanceTravelledOnCurrentPath > 46.5f)
+        if(_distanceTravelledOnCurrentPath > _currentPathToFollow.path.length + .5f && _pathTimeGoesFrom0To1 || _distanceTravelledOnCurrentPath < -.5f && !_pathTimeGoesFrom0To1)
         {
             if(_destroyTriggered == false)
             {
                 gameObject.transform.position = new Vector3(999, 999, 999);
                 //setting the position of the car far away before destroying it triggers OnTriggerExit(), which is a solution to a bug causing cars to stop driving if they immediately drive behind a car which is getting destroyed
                 CarSpawnerOrigin.DecreaseAmountOfCars();
+                _currentPathToFollow = null;
                 GameObject.Destroy(this.gameObject, .1f);
                 _destroyTriggered = true;
             }
@@ -79,7 +84,6 @@ public class PathFollow : MonoBehaviour
         {
             _distanceTravelledOnCurrentPath -= _speed * Time.fixedDeltaTime;
         }
-
 
         if(_currentPathToFollow)
         {

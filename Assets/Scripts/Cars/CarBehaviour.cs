@@ -95,8 +95,6 @@ public class CarBehaviour : MonoBehaviour
         }
     }
 
-    //public void IsGettingPriority(bool )
-
     public void AllowPriorityAwareness(bool toAllow)
     {
         if(toAllow)
