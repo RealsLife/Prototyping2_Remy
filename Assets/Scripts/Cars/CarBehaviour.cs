@@ -14,6 +14,7 @@ public class CarBehaviour : MonoBehaviour
     [SerializeField] private CarColliderCheck _carCheck;
     [SerializeField] private TrafficLightDetection _trafficLightDetection_Close;
     [SerializeField] private TrafficLightDetection _trafficLightDetection_Far;
+    [SerializeField] private GameObject _carPriorityChecker;
     //[SerializeField] private CarColliderCheck _player_TrafficLightCheck;
     //[SerializeField] private CarColliderCheck _player_TrafficLightCheckClose;
 
@@ -22,6 +23,7 @@ public class CarBehaviour : MonoBehaviour
     private bool _isPlayerClose;
     private bool _isStoppingTrafficLightNearby;
     private bool _isTrafficLightRedClose;
+    private bool _isGivingPriority;
 
     public void Start()
     {
@@ -32,7 +34,6 @@ public class CarBehaviour : MonoBehaviour
     {
         SetBools();
         SetSpeed();
-        //Movement();
         //Debug.Log(gameObject.GetInstanceID() + " " + gameObject.transform.forward);
     }
 
@@ -52,25 +53,59 @@ public class CarBehaviour : MonoBehaviour
     {
         if (_speed <= 0.1) _speed = 0;
 
-        if (_isCarInRange || _isStoppingTrafficLightNearby)
+        if ( _isStoppingTrafficLightNearby || _isCarInRange || _isGivingPriority)
         {
-            _speed = 0;
-        }else if (_isPlayerInRange)
+            Stop();
+        }
+        else if (_isPlayerInRange)
         {
-            _speed -= _maxSpeed/5 * Time.deltaTime;
+            _speed -= _maxSpeed / 5 * Time.deltaTime;
 
             if (_isPlayerClose)
             {
-                _speed -= _maxSpeed /2 * Time.deltaTime;
+                _speed -= _maxSpeed / 2 * Time.deltaTime;
             }
-        }      
+        }
 
-        else _speed = _maxSpeed; 
+        else
+        {
+            Drive();
+        }
     }
 
-    private void Movement()
+    public void Drive()
     {
-        this.transform.position += this.transform.forward * _speed * Time.deltaTime;
+        _speed = _maxSpeed;
     }
 
+    public void Stop()
+    {
+        _speed = 0;
+    }
+
+    public void GivePriority(bool toGivePriority)
+    {
+        if(toGivePriority == true)
+        {
+            _isGivingPriority = true;
+        }
+        else
+        {
+            _isGivingPriority = false;
+        }
+    }
+
+    //public void IsGettingPriority(bool )
+
+    public void AllowPriorityAwareness(bool toAllow)
+    {
+        if(toAllow)
+        {
+            _carPriorityChecker.SetActive(true);
+        }
+        else
+        {
+            _carPriorityChecker.SetActive(false);
+        }
+    }
 }

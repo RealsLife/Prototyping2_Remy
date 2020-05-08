@@ -25,6 +25,8 @@ public class PathFollow : MonoBehaviour
     private CarBehaviour _carBehaviour;
     private bool _destroyTriggered;
 
+    public Tile CurrentTile;
+
     void Start()
     {
         _carBehaviour = gameObject.GetComponent<CarBehaviour>();
@@ -117,13 +119,21 @@ public class PathFollow : MonoBehaviour
             //_currentPathToFollow = GetClosestPathOnTile(other);
 
             _pathController = other.transform.parent.GetComponentInChildren<PathController>();
-
             _currentPathToFollow = GetRandomPath(transform.position);
-
             _pathTimeGoesFrom0To1 = PathGoesFrom0To1(_currentPathToFollow);
             _distanceTravelledOnCurrentPathIsSet = false;
             _rotationIsBasedOnRotationPoint = false;
-            
+
+            CurrentTile = other.GetComponentInParent<Tile>();
+            if (CurrentTile.Type == Tile.TileType.Intersection || CurrentTile.Type == Tile.TileType.T_Junction)
+            {
+                _carBehaviour.AllowPriorityAwareness(true);
+            }
+            else
+            {
+                _carBehaviour.AllowPriorityAwareness(false);
+            }
+
             //Debug.Log("ENTER:" + _currentPathToFollow.transform.root.name);
         }
     }

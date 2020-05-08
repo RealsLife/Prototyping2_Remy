@@ -44,7 +44,7 @@ public class CarSpawnerController : MonoBehaviour
 
     private void EnableCarSpawnersForStraightTile()
     {
-        if (_YRotation == 0)
+        if (Mathf.Approximately(_YRotation, 0))
         {
             if (_ZPosition < 0)
             {
@@ -55,18 +55,7 @@ public class CarSpawnerController : MonoBehaviour
                 CarSpawnerArray[2].gameObject.SetActive(true);
             }
         }
-        else if (_YRotation == 180)
-        {
-            if (_ZPosition > 0)
-            {
-                CarSpawnerArray[0].gameObject.SetActive(true);
-            }
-            else
-            {
-                CarSpawnerArray[2].gameObject.SetActive(true);
-            }
-        }
-        else if (_YRotation == 90)
+        else if (Mathf.Approximately(_YRotation, 90))
         {
             if (_XPosition < 0)
             {
@@ -77,7 +66,19 @@ public class CarSpawnerController : MonoBehaviour
                 CarSpawnerArray[2].gameObject.SetActive(true);
             }
         }
-        else if (_YRotation == -90 || _YRotation == 270)
+        else if (Mathf.Approximately(_YRotation, 180))
+        {
+            if (_ZPosition > 0)
+            {
+                CarSpawnerArray[0].gameObject.SetActive(true);
+            }
+            else
+            {
+                CarSpawnerArray[2].gameObject.SetActive(true);
+            }
+        }
+        
+        else if (Mathf.Approximately(_YRotation, 270))
         {
             if (_XPosition > 0)
             {
@@ -92,7 +93,7 @@ public class CarSpawnerController : MonoBehaviour
 
     private void EnableCarSpawnersForBendTile()
     {
-        if (_YRotation == 0)
+        if (Mathf.Approximately(_YRotation, 0))
         {
             if (_XPosition < 0)
             {
@@ -103,7 +104,7 @@ public class CarSpawnerController : MonoBehaviour
                 CarSpawnerArray[0].gameObject.SetActive(true);
             }
         }
-        else if (_YRotation == 90)
+        else if (Mathf.Approximately(_YRotation, 90))
         {
             if (_ZPosition > 0)
             {
@@ -114,7 +115,7 @@ public class CarSpawnerController : MonoBehaviour
                 CarSpawnerArray[0].gameObject.SetActive(true);
             }
         }
-        else if (_YRotation == 180)
+        else if (Mathf.Approximately(_YRotation, 180))
         {
             if (_XPosition < 0)
             {
@@ -133,7 +134,7 @@ public class CarSpawnerController : MonoBehaviour
                 CarSpawnerArray[3].gameObject.SetActive(true);
             }
         }
-        else if (_YRotation == 270)
+        else if (Mathf.Approximately(_YRotation, 270))
         {
             if (_ZPosition < 0)
             {
@@ -148,7 +149,7 @@ public class CarSpawnerController : MonoBehaviour
 
     private void EnableCarSpawnersForTJunctionTile()
     {
-        if (_YRotation == 0)
+        if (Mathf.Approximately(_YRotation, 0))
         {
             if (_ZPosition > 0)
             {
@@ -171,7 +172,7 @@ public class CarSpawnerController : MonoBehaviour
             }
         }
 
-        else if (_YRotation == 90)
+        else if (Mathf.Approximately(_YRotation, 90))
         {
             if (_ZPosition > 0)
             {
@@ -194,7 +195,7 @@ public class CarSpawnerController : MonoBehaviour
             }
         }
 
-        else if (_YRotation == 180)
+        else if (Mathf.Approximately(_YRotation, 180))
         {
             if (_ZPosition > 0)
             {
@@ -217,7 +218,7 @@ public class CarSpawnerController : MonoBehaviour
                 //CarSpawnerArray[2].gameObject.SetActive(true);
             }
         }
-        else if (_YRotation == 270)
+        else if (Mathf.Approximately(_YRotation, 270))
         {
             if (_XPosition > 0)
             {
@@ -243,7 +244,7 @@ public class CarSpawnerController : MonoBehaviour
 
     private void EnableCarSpawnersForIntersectionTile()
     {
-        if (_YRotation == 0)
+        if (Mathf.Approximately(_YRotation, 0))
         {
             if (_ZPosition < 0)
             {
@@ -266,7 +267,7 @@ public class CarSpawnerController : MonoBehaviour
                 //CarSpawnerArray[5].gameObject.SetActive(true);
             }
         }
-        else if (_YRotation == 90)
+        else if (Mathf.Approximately(_YRotation, 90))
         {
             if (_ZPosition < 0)
             {
@@ -289,7 +290,7 @@ public class CarSpawnerController : MonoBehaviour
                 CarSpawnerArray[5].gameObject.SetActive(true);
             }
         }
-        else if (_YRotation == 180)
+        else if (Mathf.Approximately(_YRotation, 180))
         {
             if (_ZPosition < 0)
             {
@@ -312,7 +313,7 @@ public class CarSpawnerController : MonoBehaviour
                 //CarSpawnerArray[7].gameObject.SetActive(true);
             }
         }
-        else if (_YRotation == 270)
+        else if (Mathf.Approximately(_YRotation, 270))
         {
             if (_ZPosition < 0)
             {

@@ -6,6 +6,7 @@ public class TrafficLightDetection : MonoBehaviour
 {
     public bool HasDetectedStoppingTrafficLight;
     [SerializeField] private GameObject _car;
+    [SerializeField] CarBehaviour _carBehaviour;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +17,7 @@ public class TrafficLightDetection : MonoBehaviour
             {
                 //Debug.Log("detected trafficLight");
                 HasDetectedStoppingTrafficLight = true;
+                _carBehaviour.AllowPriorityAwareness(false);
             }
         }
     }
@@ -27,6 +29,7 @@ public class TrafficLightDetection : MonoBehaviour
             if (Vector3.Dot(other.GetComponentInParent<TrafficLightBehaviour>().ForwardDirectionCarsAreStoppedAt, _car.transform.forward) > .9f)
             {
                 HasDetectedStoppingTrafficLight = false;
+                _carBehaviour.AllowPriorityAwareness(true);
             }
         }
     }

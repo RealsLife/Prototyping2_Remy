@@ -59,6 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasDetectedStoppingTrafficLight: 0
   _car: {fileID: 7063146781578568775}
+  _carBehaviour: {fileID: 7063146781578568776}
 --- !u!1 &6224997677719186027
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +120,7 @@ Transform:
   - {fileID: 6232408464443638076}
   - {fileID: 6232408464800102480}
   - {fileID: 617212536}
+  - {fileID: 4328904433658519845}
   m_Father: {fileID: 7063146781578568779}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -148,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6232408464443638079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 2.45}
+  m_LocalPosition: {x: 0, y: 1, z: 3.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6232408463811229424}
@@ -166,7 +168,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!114 &6232408464443638074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasDetectedStoppingTrafficLight: 0
   _car: {fileID: 7063146781578568775}
+  _carBehaviour: {fileID: 7063146781578568776}
 --- !u!1 &7063146779983357922
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +359,7 @@ MonoBehaviour:
   _distanceTravelledOnCurrentPathIsSet: 0
   _carRotationPoint: {fileID: 9158821373089482465}
   _pathController: {fileID: 0}
+  CurrentTile: {fileID: 0}
 --- !u!114 &7063146781578568776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +376,64 @@ MonoBehaviour:
   _carCheck: {fileID: 6232408464443638074}
   _trafficLightDetection_Close: {fileID: 8801853223704161847}
   _trafficLightDetection_Far: {fileID: 1997285087900534937}
+  _carPriorityChecker: {fileID: 8466164514621252679}
+--- !u!1 &8466164514621252679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4328904433658519845}
+  - component: {fileID: 9047539063942808875}
+  - component: {fileID: 3334976666968193008}
+  m_Layer: 13
+  m_Name: CarPriorityChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4328904433658519845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466164514621252679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 3.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6232408463811229424}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9047539063942808875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466164514621252679}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 4}
+  m_Center: {x: 0, y: 0, z: 2}
+--- !u!114 &3334976666968193008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466164514621252679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f635003045ad19f4bac262c5bc6be205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7063146780994225195
 PrefabInstance:
   m_ObjectHideFlags: 0
