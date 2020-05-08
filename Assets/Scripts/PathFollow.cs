@@ -45,7 +45,7 @@ public class PathFollow : MonoBehaviour
 
     private void DestroyCarOnTileExit()
     {
-        if (_distanceTravelledOnCurrentPath < -.5f || _distanceTravelledOnCurrentPath > 30.5f)
+        if (_distanceTravelledOnCurrentPath < -.5f || _distanceTravelledOnCurrentPath > 46.5f)
         {
             if(_destroyTriggered == false)
             {
