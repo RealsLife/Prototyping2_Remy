@@ -797,10 +797,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -1.5, y: 0, z: -22.90654}
-      - {x: -1.5, y: 0, z: -15.40654}
-      - {x: -1.5, y: 0, z: 15.266161}
-      - {x: -1.5, y: 0, z: 22.766161}
+      - {x: -1.5, y: 0, z: -23}
+      - {x: -1.5, y: 0, z: -15.5}
+      - {x: -1.5, y: 0, z: 15.5}
+      - {x: -1.5, y: 0, z: 23}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -881,10 +881,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 1.5, y: 0, z: -22.846325}
-      - {x: 1.5, y: 0, z: -15.346325}
-      - {x: 1.5, y: 0, z: 15.305937}
-      - {x: 1.5, y: 0, z: 22.805937}
+      - {x: 1.5, y: 0, z: -23}
+      - {x: 1.5, y: 0, z: -15.5}
+      - {x: 1.5, y: 0, z: 15.5}
+      - {x: 1.5, y: 0, z: 23}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -961,8 +961,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 27.339436, y: 5, z: 46.076874}
-  m_Center: {x: -0.5724125, y: 2.5, z: 0.11903}
+  m_Size: {x: 46, y: 4, z: 46}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7266633234386139915
 GameObject:
   m_ObjectHideFlags: 0

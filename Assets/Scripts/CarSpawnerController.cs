@@ -6,7 +6,7 @@ public class CarSpawnerController : MonoBehaviour
 {
     [SerializeField] private Tile _tile;
     public CarSpawnerBehaviour[] CarSpawnerArray;
-    private int _YRotation;
+    private float _YRotation;
     private int _ZPosition;
     private int _XPosition;
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class CarSpawnerController : MonoBehaviour
     {
         if (_tile.TileIsEnvironmentTile)
         {
-            _YRotation = (int)gameObject.transform.parent.rotation.eulerAngles.y;
+            _YRotation = gameObject.transform.parent.rotation.eulerAngles.y;
             _ZPosition = (int)gameObject.transform.parent.position.z;
             _XPosition = (int)gameObject.transform.parent.position.x;
 
@@ -29,15 +29,16 @@ public class CarSpawnerController : MonoBehaviour
             else if (_tile.Type == Tile.TileType.T_Junction)
             {
                 EnableCarSpawnersForTJunctionTile();
-                //Debug.Log(gameObject.transform.parent.name);
-                //Debug.Log(_YRotation);
-                //Debug.Log(_ZPosition);
-                //Debug.Log(_XPosition);
+                
 
             }
             else if (_tile.Type == Tile.TileType.Intersection)
             {
                 EnableCarSpawnersForIntersectionTile();
+                //Debug.Log(gameObject.transform.parent.name);
+                //Debug.Log(_YRotation);
+                //Debug.Log(_ZPosition);
+                //Debug.Log(_XPosition);
             }
         }
     }

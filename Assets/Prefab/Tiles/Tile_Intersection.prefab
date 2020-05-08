@@ -46,10 +46,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 1.5, y: 0, z: -22.75578}
-      - {x: 1.5, y: 0, z: -6.2557793}
-      - {x: 1.5, y: 0, z: 9.20335}
-      - {x: 1.5, y: 0, z: 22.70335}
+      - {x: 1.5, y: 0, z: -23}
+      - {x: 1.5, y: 0, z: -6.5}
+      - {x: 1.5, y: 0, z: 9.5}
+      - {x: 1.5, y: 0, z: 23}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -214,10 +214,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 1.5, y: 0, z: 22.681107}
-      - {x: 1.5, y: 0, z: -3.0574837}
-      - {x: -3.5382595, y: 0, z: 1.5}
-      - {x: 22.789179, y: 0, z: 1.5}
+      - {x: 1.5, y: 0, z: 23}
+      - {x: 1.5, y: 0, z: -3}
+      - {x: -3, y: 0, z: 1.5}
+      - {x: 23, y: 0, z: 1.5}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -406,10 +406,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 1.5, y: 0, z: -22.616894}
-      - {x: 0.4209633, y: 0, z: 5.1591225}
-      - {x: -2.3146124, y: 0, z: -1.0570107}
-      - {x: 22.866846, y: 0, z: -1.5}
+      - {x: 1.5, y: 0, z: -23}
+      - {x: 1.5, y: 0, z: 3}
+      - {x: -3, y: 0, z: -1.5}
+      - {x: 23, y: 0, z: -1.5}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -574,10 +574,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -22.820133, y: 0, z: -1.5}
-      - {x: 3.6542416, y: 0, z: -1.5}
-      - {x: -1.5, y: 0, z: 2.936779}
-      - {x: -1.5, y: 0, z: -22.701313}
+      - {x: -23, y: 0, z: -1.5}
+      - {x: 3, y: 0, z: -1.5}
+      - {x: -1.5, y: 0, z: 3}
+      - {x: -1.5, y: 0, z: -23}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -1449,10 +1449,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -22.931776, y: 0, z: -1.5}
-      - {x: -15.431776, y: 0, z: -1.5}
-      - {x: 15.345488, y: 0, z: -1.5}
-      - {x: 22.845488, y: 0, z: -1.5}
+      - {x: -23, y: 0, z: -1.5}
+      - {x: -15.5, y: 0, z: -1.5}
+      - {x: 15.5, y: 0, z: -1.5}
+      - {x: 23, y: 0, z: -1.5}
       isClosed: 0
       space: 0
       controlMode: 2
@@ -1533,10 +1533,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -1.5, y: 0, z: -22.834301}
-      - {x: -1.5, y: 0, z: 2.4734306}
-      - {x: -5.461792, y: 0, z: 1.5}
-      - {x: 22.686304, y: 0, z: 1.5}
+      - {x: -1.5, y: 0, z: -23}
+      - {x: -1.5, y: 0, z: 3}
+      - {x: -3, y: 0, z: 1.5}
+      - {x: 23, y: 0, z: 1.5}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -1617,10 +1617,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -22.766964, y: 0, z: -1.5}
-      - {x: 5.9952965, y: 0, z: -1.5}
-      - {x: 1.5559254, y: 0.000045776367, z: -4.333214}
-      - {x: 1.5559254, y: 0.000045776367, z: 22.745415}
+      - {x: -23, y: 0, z: -1.5}
+      - {x: 2.766964, y: 0, z: -1.5}
+      - {x: 1.4440746, y: 0.000045776367, z: -2.7454147}
+      - {x: 1.5, y: 0.000045776367, z: 23}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -1701,10 +1701,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -1.5, y: 0, z: -22.714046}
-      - {x: -1.5, y: 0, z: -7.7140465}
-      - {x: -1.5, y: 0, z: 7.6654263}
-      - {x: -1.5, y: 0, z: 22.665426}
+      - {x: -1.5, y: 0, z: -23}
+      - {x: -1.5, y: 0, z: -8}
+      - {x: -1.5, y: 0, z: 8}
+      - {x: -1.5, y: 0, z: 23}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -1957,10 +1957,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -23.036175, y: 0, z: 1.5}
-      - {x: -8.036175, y: 0, z: 1.5}
-      - {x: 8.100218, y: 0, z: 1.5}
-      - {x: 23.100218, y: 0, z: 1.5}
+      - {x: -23, y: 0, z: 1.5}
+      - {x: -8, y: 0, z: 1.5}
+      - {x: 8, y: 0, z: 1.5}
+      - {x: 23, y: 0, z: 1.5}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -2210,10 +2210,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 22.78576, y: 0, z: -1.5}
-      - {x: -4.235345, y: 0, z: -1.5}
-      - {x: -1.5, y: 0, z: -4.169445}
-      - {x: -1.5, y: 0, z: 22.593952}
+      - {x: 23, y: 0, z: -1.5}
+      - {x: -4.0211067, y: 0, z: -1.5}
+      - {x: -1.5, y: 0, z: -3.7633972}
+      - {x: -1.5, y: 0, z: 23}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -2294,10 +2294,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: 1.5, y: 0, z: -22.726635}
-      - {x: 1.5, y: 0, z: 5.1351967}
-      - {x: 3.490429, y: 0, z: 1.5}
-      - {x: -22.70325, y: 0, z: 1.5}
+      - {x: 1.5, y: 0, z: -23}
+      - {x: 1.5, y: 0, z: 3}
+      - {x: 3, y: 0, z: 1.5}
+      - {x: -23, y: 0, z: 1.5}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -2378,10 +2378,10 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -22.690294, y: 0, z: 1.5}
-      - {x: 3.5492306, y: 0, z: 1.5}
-      - {x: -1.5, y: 0, z: -4.1799088}
-      - {x: -1.5, y: 0, z: 22.828775}
+      - {x: -23, y: 0, z: 1.5}
+      - {x: 3, y: 0, z: 1.5}
+      - {x: -1.5, y: 0, z: -3}
+      - {x: -1.5, y: 0, z: 23}
       isClosed: 0
       space: 0
       controlMode: 0
@@ -2526,8 +2526,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 45.95445, y: 5.947708, z: 45.8831}
-  m_Center: {x: 0.020868301, y: 2.473854, z: -0.07916069}
+  m_Size: {x: 46, y: 4, z: 46}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7457564791144484908
 GameObject:
   m_ObjectHideFlags: 0
