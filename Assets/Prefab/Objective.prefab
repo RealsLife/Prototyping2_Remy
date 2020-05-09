@@ -65,6 +65,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 221122858490737810}
     m_Modifications:
+    - target: {fileID: 4456132391004806734, guid: ded0217b5c3e73742a6d196974874dff,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.2901961
+      objectReference: {fileID: 0}
     - target: {fileID: 4456132391175637723, guid: ded0217b5c3e73742a6d196974874dff,
         type: 3}
       propertyPath: m_Name
@@ -124,6 +129,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4456132391513533189, guid: ded0217b5c3e73742a6d196974874dff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4456132391513533194, guid: ded0217b5c3e73742a6d196974874dff,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4456132391513533194, guid: ded0217b5c3e73742a6d196974874dff,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4456132391513533194, guid: ded0217b5c3e73742a6d196974874dff,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4456132391513533194, guid: ded0217b5c3e73742a6d196974874dff,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ded0217b5c3e73742a6d196974874dff, type: 3}
