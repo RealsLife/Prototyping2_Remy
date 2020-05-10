@@ -6,7 +6,7 @@ public class SubjectPieceRaycast : SubjectPiece
 {
     public void TriggerPiece()
     {
-        _subjectHandler.TriggerVerdict(this);
+        //_subjectHandler.TriggerVerdict(this);
         Destroy(this.gameObject);
     }
 

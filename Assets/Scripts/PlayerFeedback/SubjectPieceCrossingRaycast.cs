@@ -8,12 +8,8 @@ public class SubjectPieceCrossingRaycast : SubjectPieceCrossing
 
     private float _lookTimer;
 
-    private MeshRenderer _meshRenderer;
-
-    private void Start()
-    {
-        _meshRenderer = this.GetComponent<MeshRenderer>();
-    }
+    [SerializeField] private MeshRenderer _starMeshRenderer;
+    [SerializeField] private ParticleSystem _starParticles;
 
     private void Update()
     {
@@ -26,17 +22,19 @@ public class SubjectPieceCrossingRaycast : SubjectPieceCrossing
                 WasTriggered = false;
                 _lookTimer = 2f;
             }
-            _meshRenderer.enabled = false;
+            _starMeshRenderer.enabled = true;
         }
         else
         {
-            _meshRenderer.enabled = true;
+            _starMeshRenderer.enabled = false;
         }
     }
 
 
     public void TriggerPiece()
     {
+        if (!WasTriggered)
+            _starParticles.Play();
         WasTriggered = true;
         _lookTimer = 2f;
     }

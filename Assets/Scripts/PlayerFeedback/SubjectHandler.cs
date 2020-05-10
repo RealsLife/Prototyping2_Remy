@@ -25,37 +25,13 @@ public class SubjectHandler : MonoBehaviour
     private void Start()
     {
         UIPopup = FindObjectOfType<UIPopup>();
-    }
+    }    
 
-    public virtual void TriggerVerdict(SubjectPiece piece)
+    private void AdjustScore(Verdict verdict)
     {
-        if (piece.Judgement == Verdict.Positive)
-        {
-            if (!_positives.Contains(piece.Description))
-                _positives.Add(piece.Description);
-        }
-        else if (piece.Judgement == Verdict.Mild || piece.Judgement == Verdict.Serious)
-        {
-            if (!_negatives.Contains(piece.Description))
-                _negatives.Add(piece.Description);
-
-            if(!_singularPenalty || (_singularPenalty && !_singularPenaltyGiven))
-                AdjustScore(piece);
-        }
-
-        if(piece.Judgement != Verdict.None)
-        {
-            UIPopup = FindObjectOfType<UIPopup>();
-            UIPopup.PopFeedback(piece);
-        }
-
-    }
-
-    private void AdjustScore(SubjectPiece piece)
-    {
-        if (piece.Judgement == Verdict.Mild)
+        if (verdict == Verdict.Mild)
             _scorePenalty -= 3;
-        else if (piece.Judgement == Verdict.Serious)
+        else if (verdict == Verdict.Serious)
             _scorePenalty -= 6;
 
         _singularPenaltyGiven = true;
@@ -69,10 +45,18 @@ public class SubjectHandler : MonoBehaviour
         return package;
     }
 
-    public virtual void AddFeedback(ref List<string> stringList, string textToAdd)
+    public virtual void AddFeedback(ref List<string> stringList, string textToAdd, Verdict verdict)
     {
         if (!ListContainsString(stringList, textToAdd))
             stringList.Add(textToAdd);
+
+        AdjustScore(verdict);
+
+        if (verdict != Verdict.None || verdict != Verdict.Positive)
+        {
+            UIPopup = FindObjectOfType<UIPopup>();
+            UIPopup.PopFeedback(verdict, textToAdd);
+        }
     }
 
     private bool ListContainsString(List<string> stringList, string textToFind)

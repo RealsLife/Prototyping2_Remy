@@ -27,7 +27,7 @@ public class SubjectPieceCheck : SubjectPiece
                 JudgementWithoutLight();
             }
 
-            _subjectHandler.TriggerVerdict(this);
+            //_subjectHandler.TriggerVerdict(this);
             Destroy(this.gameObject);
         }
 
