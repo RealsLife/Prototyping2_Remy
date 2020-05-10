@@ -11,6 +11,7 @@ public class CarSpawnerBehaviour : MonoBehaviour
     [SerializeField] private bool _spawnSingleCarOnPlay;
     [Range(1, 50)][SerializeField] private int _maximumAmountOfCars;
     private int _currentAmountOfCarsSpawned = 0;
+    private bool _isAbleToSpawnCars = true;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +24,24 @@ public class CarSpawnerBehaviour : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        //LimitAmountOfCarsToMaximum();
+    }
+
     IEnumerator SpawnCar()
     {
         while (true)
         {
-            if (_spawnCars && IsAbleToSpawnCars())
+            if (_spawnCars && _isAbleToSpawnCars)
             {
+                if (_currentAmountOfCarsSpawned < _maximumAmountOfCars)
+                {
+                    factory.SpawnCar(this.gameObject.transform.position, transform.forward, this);
+                    IncreaseAmountOfCars();
+                    
+                }
                 yield return new WaitForSeconds(_secondsBetweenSpawns);
-                factory.SpawnCar(this.gameObject.transform.position, transform.forward, this);
-                IncreaseAmountOfCars();
             }
             else
             {
@@ -40,15 +50,15 @@ public class CarSpawnerBehaviour : MonoBehaviour
         }
     }
 
-    private bool IsAbleToSpawnCars()
+    private void LimitAmountOfCarsToMaximum()
     {
-        if(_currentAmountOfCarsSpawned < _maximumAmountOfCars)
+        if (_currentAmountOfCarsSpawned < _maximumAmountOfCars)
         {
-            return true;
+            _isAbleToSpawnCars = true;
         }
         else
         {
-            return false;
+            _isAbleToSpawnCars = false;
         }
     }
 
@@ -60,5 +70,23 @@ public class CarSpawnerBehaviour : MonoBehaviour
     public void DecreaseAmountOfCars()
     {
         _currentAmountOfCarsSpawned--;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.parent.CompareTag("Car"))
+        {
+            //Debug.Log("CAR FOUND");
+            _isAbleToSpawnCars = false;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.transform.parent.CompareTag("Car"))
+        {
+            Debug.Log("CAR EXIT");
+            _isAbleToSpawnCars = true;
+        }
     }
 }
