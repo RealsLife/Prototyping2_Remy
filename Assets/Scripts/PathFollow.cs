@@ -49,7 +49,7 @@ public class PathFollow : MonoBehaviour
     private void DestroyCarOnTileExit()
     {
         //if (_distanceTravelledOnCurrentPath < -.5f || _distanceTravelledOnCurrentPath > 46.5f)
-        if(_distanceTravelledOnCurrentPath > _currentPathToFollow.path.length + .5f && _pathTimeGoesFrom0To1 || _distanceTravelledOnCurrentPath < -.5f && !_pathTimeGoesFrom0To1)
+        if(_distanceTravelledOnCurrentPath > _currentPathToFollow.path.length + .4f && _pathTimeGoesFrom0To1 || _distanceTravelledOnCurrentPath < -.4f && !_pathTimeGoesFrom0To1)
         {
             if(_destroyTriggered == false)
             {
@@ -93,9 +93,18 @@ public class PathFollow : MonoBehaviour
 
     private void RotateCarAlongPath()
     {
+        //if(_distanceTravelledOnCurrentPath > 1 || _distanceTravelledOnCurrentPath < -1)
+        //{
+        //    _rotationIsBasedOnRotationPoint = true;
+        //}
+        //else
+        //{
+        //    _rotationIsBasedOnRotationPoint = false;
+        //}
+
         if (_rotationIsBasedOnRotationPoint)
         {
-            //Debug.Log("car center");
+
             _carRotation = _currentPathToFollow.path.GetRotation(_currentPathToFollow.path.GetClosestTimeOnPath(_carRotationPoint.position));
         }
         else
@@ -119,9 +128,6 @@ public class PathFollow : MonoBehaviour
     {
         if(other.transform.CompareTag("Road"))
         {
-            //Debug.Log("TRIGGER ENTERED");
-            //_currentPathToFollow = GetClosestPathOnTile(other);
-
             _pathController = other.transform.parent.GetComponentInChildren<PathController>();
             _currentPathToFollow = GetRandomPath(transform.position);
             _pathTimeGoesFrom0To1 = PathGoesFrom0To1(_currentPathToFollow);
