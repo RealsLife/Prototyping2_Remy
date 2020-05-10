@@ -10,22 +10,22 @@ public class UIPopup : MonoBehaviour
     public UICardPopup CardRed;
 
 
-    public void PopFeedback(SubjectPiece piece)
+    public void PopFeedback(Verdict verdict, string textToDisplay)
     {
-        if(piece.Judgement == Verdict.Positive)
+        if(verdict == Verdict.Positive)
         {
             CardGreen.gameObject.SetActive(true);
-            CardGreen.PlayCardPopup(piece.Description);
+            CardGreen.PlayCardPopup(textToDisplay);
         }
-        else if(piece.Judgement == Verdict.Mild)
+        else if(verdict == Verdict.Mild)
         {
             CardOrange.gameObject.SetActive(true);
-            CardOrange.PlayCardPopup(piece.Description);
+            CardOrange.PlayCardPopup(textToDisplay);
         }
-        else if(piece.Judgement == Verdict.Serious)
+        else if(verdict == Verdict.Serious)
         {
             CardRed.gameObject.SetActive(true);
-            CardRed.PlayCardPopup(piece.Description);
+            CardRed.PlayCardPopup(textToDisplay);
         }
     }
 }

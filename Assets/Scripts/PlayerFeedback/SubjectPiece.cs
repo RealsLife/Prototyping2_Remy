@@ -28,7 +28,7 @@ public class SubjectPiece : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            _subjectHandler.TriggerVerdict(this);
+            //_subjectHandler.TriggerVerdict(this);
 
             ChangePieceStates(ref EnablePieces, true);
             ChangePieceStates(ref DisablePieces, false);
