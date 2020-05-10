@@ -19,7 +19,7 @@ public class CarSpawnerBehaviour : MonoBehaviour
         StartCoroutine(SpawnCar());
         if(_spawnSingleCarOnPlay)
         {
-            factory.SpawnCar(this.transform.position, transform.forward, this);
+            factory.SpawnCar(this.transform.position, transform.forward, this, this.gameObject);
             IncreaseAmountOfCars();
         }
     }
@@ -37,7 +37,7 @@ public class CarSpawnerBehaviour : MonoBehaviour
             {
                 if (_currentAmountOfCarsSpawned < _maximumAmountOfCars)
                 {
-                    factory.SpawnCar(this.gameObject.transform.position, transform.forward, this);
+                    factory.SpawnCar(this.gameObject.transform.position, transform.forward, this, this.gameObject);
                     IncreaseAmountOfCars();
                     
                 }
