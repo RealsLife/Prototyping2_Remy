@@ -10,7 +10,7 @@ public enum Verdict
 
 public class SubjectPiece : MonoBehaviour
 {
-    public SubjectHandler Handler;
+    protected SubjectHandler _subjectHandler;
 
     public Verdict Judgement = Verdict.None;
     public string Description;
@@ -19,18 +19,23 @@ public class SubjectPiece : MonoBehaviour
     public List<SubjectPiece> DisablePieces;
     public List<SubjectPieceRaycast> RaycastPieces;
 
+    private void Start()
+    {
+        _subjectHandler = this.transform.parent.GetComponent<SubjectHandler>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-            Handler.TriggerVerdict(this);
+            _subjectHandler.TriggerVerdict(this);
 
             ChangePieceStates(ref EnablePieces, true);
             ChangePieceStates(ref DisablePieces, false);
 
             foreach (SubjectPieceRaycast piece in RaycastPieces)
             {
-                piece.MainPiece = this;
+                //piece.MainPiece = this;
                 piece.gameObject.SetActive(true);
             }
 

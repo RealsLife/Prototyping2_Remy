@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SubjectHandler : MonoBehaviour
 {
-    private List<string> _positives = new List<string>();
-    private List<string> _negatives = new List<string>();
+    protected List<string> _positives = new List<string>();
+    protected List<string> _negatives = new List<string>();
 
     public string Positives { get { return StringListToString(_positives); } }
     public string Negatives { get { return StringListToString(_negatives); } }
@@ -67,5 +67,21 @@ public class SubjectHandler : MonoBehaviour
         foreach (string line in stringList)
             package += line + "\n";
         return package;
+    }
+
+    public virtual void AddFeedback(ref List<string> stringList, string textToAdd)
+    {
+        if (!ListContainsString(stringList, textToAdd))
+            stringList.Add(textToAdd);
+    }
+
+    private bool ListContainsString(List<string> stringList, string textToFind)
+    {
+        int amount = 0;
+
+        foreach (string line in stringList)
+            amount += line.Equals(textToFind) ? 1 : 0;
+
+        return amount > 0;
     }
 }

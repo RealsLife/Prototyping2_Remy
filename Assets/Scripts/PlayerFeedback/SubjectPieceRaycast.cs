@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class SubjectPieceRaycast : SubjectPiece
 {
-    [HideInInspector] public SubjectPiece MainPiece;
-
     public void TriggerPiece()
     {
-        Handler.TriggerVerdict(this);
-        MainPiece.RaycastPieces.Remove(this);
+        _subjectHandler.TriggerVerdict(this);
         Destroy(this.gameObject);
     }
 

@@ -12,9 +12,9 @@ public class PlayerViewRaycast : MonoBehaviour
 
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, Mathf.Infinity, _challengeRaycastMask))
         {
-            if(hit.transform.GetComponent<SubjectPieceRaycast>() != null)
+            if(hit.transform.GetComponent<SubjectPieceCrossingRaycast>() != null)
             {
-                SubjectPieceRaycast subjectPiece = hit.transform.GetComponent<SubjectPieceRaycast>();
+                SubjectPieceCrossingRaycast subjectPiece = hit.transform.GetComponent<SubjectPieceCrossingRaycast>();
                 subjectPiece.TriggerPiece();
             }
         }
