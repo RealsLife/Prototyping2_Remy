@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5272903983565113409}
   - component: {fileID: 7844807768888327528}
   m_Layer: 9
-  m_Name: GreenMiniLight
+  m_Name: RedMiniLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 071e15d294bd18340a0ba540823c1249, type: 2}
+  - {fileID: 2100000, guid: fd9c1a59fd8b75444be035473a6e154b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -257,8 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a95401edbe44ec47a7febd47d2c59f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _greenLightObject: {fileID: 8031914472329171879}
-  _redLightObject: {fileID: 4701437256123846640}
+  _greenLightObject: {fileID: 4701437256123846640}
+  _redLightObject: {fileID: 8031914472329171879}
   _greenLightLitMaterial: {fileID: 2100000, guid: 9084ec473ec8a7148a28dd6eb32740ea,
     type: 2}
   _redLightLitMaterial: {fileID: 2100000, guid: 325f5067900c51e49ae31593ddbe9abe,
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 3246391729652760603}
   - component: {fileID: 9181126010665016449}
   m_Layer: 9
-  m_Name: RedMiniLight
+  m_Name: GreenMiniLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -366,7 +366,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd9c1a59fd8b75444be035473a6e154b, type: 2}
+  - {fileID: 2100000, guid: 071e15d294bd18340a0ba540823c1249, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 2017966132495694855}
   - component: {fileID: 9015986249929772603}
   m_Layer: 9
-  m_Name: RedLight
+  m_Name: GreenLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -445,7 +445,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd9c1a59fd8b75444be035473a6e154b, type: 2}
+  - {fileID: 2100000, guid: 071e15d294bd18340a0ba540823c1249, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -555,8 +555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a95401edbe44ec47a7febd47d2c59f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _greenLightObject: {fileID: 389896702725899133}
-  _redLightObject: {fileID: 4018486497606569977}
+  _greenLightObject: {fileID: 4018486497606569977}
+  _redLightObject: {fileID: 389896702725899133}
   _greenLightLitMaterial: {fileID: 2100000, guid: 9084ec473ec8a7148a28dd6eb32740ea,
     type: 2}
   _redLightLitMaterial: {fileID: 2100000, guid: 325f5067900c51e49ae31593ddbe9abe,
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 7048554818297346743}
   - component: {fileID: 8943377451554659445}
   m_Layer: 9
-  m_Name: GreenLight
+  m_Name: RedLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,7 +632,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 071e15d294bd18340a0ba540823c1249, type: 2}
+  - {fileID: 2100000, guid: fd9c1a59fd8b75444be035473a6e154b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
