@@ -101,6 +101,10 @@ public class TrafficLightBehaviour : MonoBehaviour
             {
                 LitRedLight();
                 yield return new WaitForSeconds(_timeLightStaysRed);
+                if (!_hasOrangeLight)
+                {
+                    yield return new WaitForSeconds(_timeLightStaysOrange);
+                }
                 LitGreenLight();
                 yield return new WaitForSeconds(_timeLightStaysGreen);
                 if (_hasOrangeLight)
@@ -123,6 +127,10 @@ public class TrafficLightBehaviour : MonoBehaviour
                 }
                 LitRedLight();
                 yield return new WaitForSeconds(_timeLightStaysRed);
+                if (!_hasOrangeLight)
+                {
+                    yield return new WaitForSeconds(_timeLightStaysOrange);
+                }
             }
         }
     }
