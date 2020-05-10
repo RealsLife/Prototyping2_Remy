@@ -220,7 +220,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 239378781582670930, guid: f356f9707e5e8ba439e83842bc0880f5, type: 3}
-  - {fileID: -7301279310005317288, guid: f356f9707e5e8ba439e83842bc0880f5, type: 3}
+  - {fileID: 2100000, guid: f910ac49c1bf0214d9deaf89ce892dc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -271,3 +271,4 @@ MonoBehaviour:
   _timeLightStaysOrange: 3
   _timeLightStaysGreen: 5
   _redLightCollider: {fileID: 0}
+  _forwardDirectionCarsAreStoppedAt: {fileID: 0}

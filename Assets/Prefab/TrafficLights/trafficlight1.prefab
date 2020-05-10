@@ -63,7 +63,7 @@ MeshRenderer:
   - {fileID: -7301279310005317288, guid: 5846c66123dc9764f9482f0d11761eee, type: 3}
   - {fileID: 2100000, guid: 071e15d294bd18340a0ba540823c1249, type: 2}
   - {fileID: 2100000, guid: fede21a2c43c9fe4e95d218a6c370c4d, type: 2}
-  - {fileID: 2100000, guid: fd9c1a59fd8b75444be035473a6e154b, type: 2}
+  - {fileID: 2100000, guid: f910ac49c1bf0214d9deaf89ce892dc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,3 +116,4 @@ MonoBehaviour:
   _timeLightStaysOrange: 3
   _timeLightStaysGreen: 5
   _redLightCollider: {fileID: 0}
+  _forwardDirectionCarsAreStoppedAt: {fileID: 0}
