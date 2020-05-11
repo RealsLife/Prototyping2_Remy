@@ -9,6 +9,6 @@ public class ProfileHeader : MonoBehaviour
 
     private void Start()
     {
-        //_playerNameTextField.text = PlayerProfile._playerName;
+        _playerNameTextField.text = ProfileSaver._playerProfile._name;
     }
 }

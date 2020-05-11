@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -447,13 +447,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1942461312, guid: 8ee3d981c6132b9479189c9a39f33123, type: 3}
       propertyPath: speed
-      value: 0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 593441592992976147, guid: 8ee3d981c6132b9479189c9a39f33123,
         type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 3aa0167c7b3bbc5479d88130024bd317, type: 3}
+      objectReference: {fileID: 2800000, guid: 72a83861d6146e94386a59124b03f9ae, type: 3}
     - target: {fileID: 1631561391616641887, guid: 8ee3d981c6132b9479189c9a39f33123,
         type: 3}
       propertyPath: speed
@@ -628,6 +628,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522820982358821144, guid: 8ee3d981c6132b9479189c9a39f33123,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: DifficultySelect
       objectReference: {fileID: 0}
     - target: {fileID: 3522820982358821150, guid: 8ee3d981c6132b9479189c9a39f33123,
         type: 3}

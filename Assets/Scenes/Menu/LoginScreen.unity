@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 725314189}
   - component: {fileID: 725314190}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: boy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -965,7 +965,7 @@ RectTransform:
   m_GameObject: {fileID: 725314188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 573.04517}
-  m_LocalScale: {x: 0.63226, y: 0.63226, z: 0.63226}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1165145988}
   m_Father: {fileID: 1615691660}
@@ -973,7 +973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33.815796, y: -12.126465}
+  m_AnchoredPosition: {x: -33.815796, y: -30}
   m_SizeDelta: {x: 215.66, y: 193.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725314190
@@ -996,11 +996,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    m_NormalColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 874400233}
   - component: {fileID: 874400234}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: girl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1049,7 +1049,7 @@ RectTransform:
   m_GameObject: {fileID: 874400232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 573.04517}
-  m_LocalScale: {x: 0.63226, y: 0.63226, z: 0.63226}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 1262582248}
   m_Father: {fileID: 1615691660}
@@ -1057,7 +1057,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 237, y: -12.126465}
+  m_AnchoredPosition: {x: 237, y: -30}
   m_SizeDelta: {x: 215.66, y: 193.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &874400234
@@ -1080,7 +1080,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.87058824, g: 0.87058824, b: 0.87058824, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1220,7 +1220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ab3db5af71ca87342ab24c563a874232, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3b3dd9e62c2ec948abea07ecae4711b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1500,7 +1500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ab3db5af71ca87342ab24c563a874232, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edd51d143cda3d04c93572156fdb39c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a9a98acb13685464bbfbae8799678b62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bec817bfbfcf9a4cba6abc65ffc69f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2048,7 +2048,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainMenu
+          m_StringArgument: DifficultySelect
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1045819026}
@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a9a98acb13685464bbfbae8799678b62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0380ee0aba28b6e42b60a19ba520981f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2591,8 +2591,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34736c2df66b7a24281714540efa81bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkBoxBoy: {fileID: 0}
-  _checkboxGirl: {fileID: 0}
+  _checkBoxBoy: {fileID: 725314190}
+  _checkboxGirl: {fileID: 874400234}
   _gaVerder: {fileID: 2602128584137633156}
   _name: {fileID: 224145700}
 --- !u!224 &2602128583889789709
@@ -2697,7 +2697,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 21300000, guid: a4a45ce13dccbf24480dae2a5027ed6f, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 1cb6fb4cbe63ce14da9546121d25f1ba, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2717,7 +2717,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainMenu
+          m_StringArgument: DifficultySelect
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1045819026}
@@ -2846,7 +2846,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 39f9aa49c8f1e7f41884ba657e74e0c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72a83861d6146e94386a59124b03f9ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
