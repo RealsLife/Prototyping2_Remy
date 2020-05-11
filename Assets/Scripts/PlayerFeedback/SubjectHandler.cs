@@ -52,7 +52,7 @@ public class SubjectHandler : MonoBehaviour
 
         AdjustScore(verdict);
 
-        if (verdict != Verdict.None || verdict != Verdict.Positive)
+        if (verdict != Verdict.None && verdict != Verdict.Positive)
         {
             UIPopup = FindObjectOfType<UIPopup>();
             UIPopup.PopFeedback(verdict, textToAdd);

@@ -11,7 +11,7 @@ public class SubjectHandlerCrossing : SubjectHandler
     private bool _hasFailedLooking = false;
     private bool _hasFailedLights = false;
 
-    private float _redLightGraceTimer = 2f;
+    private float _redLightGraceTimer = 1f;
 
     private void Update()
     {
