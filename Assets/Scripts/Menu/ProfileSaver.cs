@@ -12,10 +12,11 @@ using UnityEngine;
     static class ProfileSaver
     {
 
-        #region Fields
-        //static string SaveFilePath = Application.dataPath + @"/GamerProfile";
-        static string SaveFilePath = @"C:\Users\Brian Wouters\";
-        static string SaveFileName = "GamerProfile";
+    #region Fields
+    //static string SaveFilePath = Application.dataPath + @"/GamerProfile";
+    //    static string SaveFilePath = @"C:\Users\Brian Wouters\";
+    static string SaveFilePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+    static string SaveFileName = "GamerProfile";
         public static PlayerProfile _playerProfile;
         #endregion
 
