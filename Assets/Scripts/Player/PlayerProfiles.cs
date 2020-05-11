@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerProfile : MonoBehaviour
+public class PlayerProfiles : MonoBehaviour
 {
     public static string _playerName;
     public GameObject _inputField;
