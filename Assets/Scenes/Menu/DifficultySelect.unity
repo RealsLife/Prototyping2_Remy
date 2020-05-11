@@ -1728,7 +1728,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 716576577}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6451024387275745550}
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TrafficSituation_01
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &716576577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4868,7 +4879,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2008943274}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6451024387275745550}
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TrafficSituation_02
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2008943274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5677,7 +5699,7 @@ PrefabInstance:
     - target: {fileID: 2942979274572287945, guid: 389703e0da1d2eb459eeff2894ead4f2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2942979274572287945, guid: 389703e0da1d2eb459eeff2894ead4f2,
         type: 3}
