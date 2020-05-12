@@ -17,6 +17,12 @@ public class CarColliderCheck : MonoBehaviour
             {
                 //Debug.Log("ACTIVITYEEE");
                 _isActive[i] = true;
+
+                //other.transform.GetComponentInParent<PathFollow>().CarIsCloselyFollowedByOtherCar = true;
+                if (other.transform.GetComponentInParent<PathFollow>().CurrentPathTheCarIsFollowing?.GetInstanceID() == this.transform.GetComponentInParent<PathFollow>().CurrentPathTheCarIsFollowing?.GetInstanceID())
+                {
+                    other.transform.GetComponentInParent<PathFollow>().CarBehindThisCarIsFollowingTheSamePath = true;
+                }
             }
         }
     }
@@ -28,6 +34,8 @@ public class CarColliderCheck : MonoBehaviour
             if (other.transform.parent.tag == _tag[i])
             {
                 _isActive[i] = false;
+                other.transform.GetComponentInParent<PathFollow>().CarBehindThisCarIsFollowingTheSamePath = false;
+                //other.transform.GetComponentInParent<PathFollow>().CarIsCloselyFollowedByOtherCar = false;
             }
         }
     }

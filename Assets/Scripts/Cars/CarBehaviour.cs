@@ -18,11 +18,13 @@ public class CarBehaviour : MonoBehaviour
     //[SerializeField] private CarColliderCheck _player_TrafficLightCheck;
     //[SerializeField] private CarColliderCheck _player_TrafficLightCheckClose;
 
+    public bool IsCarInRange { get { return _isCarInRange; } }
     private bool _isCarInRange;
     private bool _isPlayerInRange;
     private bool _isPlayerClose;
     private bool _isStoppingTrafficLightNearby;
-    private bool _isTrafficLightRedClose;
+    public bool IsStandingStillAtTrafficLight { get { return _isStoppingTrafficLightNearby; } }
+    public bool IsGivingPriority { get { return _isGivingPriority; } }
     private bool _isGivingPriority;
 
     public void Start()
@@ -83,7 +85,7 @@ public class CarBehaviour : MonoBehaviour
         _speed = 0;
     }
 
-    public void GivePriority(bool toGivePriority)
+    public void ForceToGivePriority(bool toGivePriority)
     {
         if(toGivePriority == true)
         {

@@ -17,7 +17,7 @@ public class TrafficLightDetection : MonoBehaviour
             {
                 //Debug.Log("detected trafficLight");
                 HasDetectedStoppingTrafficLight = true;
-                _carBehaviour.AllowPriorityAwareness(false);
+                //_carBehaviour.AllowPriorityAwareness(false);
             }
         }
     }
@@ -29,7 +29,8 @@ public class TrafficLightDetection : MonoBehaviour
             if (Vector3.Dot(other.GetComponentInParent<TrafficLightBehaviour>().ForwardDirectionCarsAreStoppedAt, _car.transform.forward) > .9f)
             {
                 HasDetectedStoppingTrafficLight = false;
-                _carBehaviour.AllowPriorityAwareness(true);
+                _carBehaviour.ForceToGivePriority(false);
+                //_carBehaviour.AllowPriorityAwareness(true);
             }
         }
     }
