@@ -23,10 +23,10 @@ public class NieuwSpelMenu : MonoBehaviour
 
     public void CreatePlayer()
     {
-        CheckCurrentGenderInUI();
-        ProfileSaver._playerProfile._name = _name.text;
-        ProfileSaver._playerProfile._gender = _currentGender;
-        ProfileSaver.Save();
+        //CheckCurrentGenderInUI();
+        //ProfileSaver._playerProfile._name = _name.text;
+        //ProfileSaver._playerProfile._gender = _currentGender;
+        //ProfileSaver.Save();
     
     }
 
