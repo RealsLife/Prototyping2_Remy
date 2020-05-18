@@ -25,19 +25,19 @@ public class PlayerSpawner : MonoBehaviour
     public void SpawnPlayer()
     {
         GameObject _player;
-        if (ProfileSaver._playerProfile._gender == (int)Gender.Boy)
-        {
-            _player = Instantiate(_PlayerPrefabBoy, transform.position, transform.rotation);
+        //if (ProfileSaver._playerProfile._gender == (int)Gender.Boy)
+        //{
+        _player = Instantiate(_PlayerPrefabBoy, transform.position, transform.rotation);
             _IsActive = true;
             _player.transform.parent = this.transform;
-        }
-        else if (ProfileSaver._playerProfile._gender == (int)Gender.Girl)
-        {
-            _player = Instantiate(_PlayerPrefabGirl, transform.position, transform.rotation);
-            _IsActive = true;
-            _player.transform.parent = this.transform;
-        }
-        else { return; }
+        //}
+        //else if (ProfileSaver._playerProfile._gender == (int)Gender.Girl)
+        //{
+        //    _player = Instantiate(_PlayerPrefabGirl, transform.position, transform.rotation);
+        //    _IsActive = true;
+        //    _player.transform.parent = this.transform;
+        //}
+        //else { return; }
       
 
     }
