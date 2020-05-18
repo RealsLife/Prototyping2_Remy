@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
 
     public static void UnlockNewLevel(int level)
     {
-        if (level > _levelsUnlocked)
+        if (level + 1 > _levelsUnlocked)
         {
             _levelsUnlocked = level;
         }
