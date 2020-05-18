@@ -556,3 +556,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee3d981c6132b9479189c9a39f33123, type: 3}
+--- !u!1001 &9152580593438295383
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0000007751452
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -2.1648906e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 2.1648903e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374338502169550431, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993166996414901324, guid: e0403d4c872a4144fa9852c0162daab3,
+        type: 3}
+      propertyPath: m_Name
+      value: Tile_Straight_ParkingLot
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e0403d4c872a4144fa9852c0162daab3, type: 3}
