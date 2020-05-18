@@ -15,13 +15,16 @@ public class CarColliderCheck : MonoBehaviour
         {
             if (other.transform.parent.tag == _tag[i])
             {
-                //Debug.Log("ACTIVITYEEE");
+                PathFollow otherPathFollow = other.transform.GetComponentInParent<PathFollow>();
+                PathFollow thisPathFollow = this.transform.GetComponentInParent<PathFollow>();
                 _isActive[i] = true;
 
-                //other.transform.GetComponentInParent<PathFollow>().CarIsCloselyFollowedByOtherCar = true;
-                if (other.transform.GetComponentInParent<PathFollow>().CurrentPathTheCarIsFollowing?.GetInstanceID() == this.transform.GetComponentInParent<PathFollow>().CurrentPathTheCarIsFollowing?.GetInstanceID())
+                if(otherPathFollow && thisPathFollow)
                 {
-                    other.transform.GetComponentInParent<PathFollow>().CarBehindThisCarIsFollowingTheSamePath = true;
+                    if (otherPathFollow.CurrentPathTheCarIsFollowing?.GetInstanceID() == thisPathFollow.CurrentPathTheCarIsFollowing?.GetInstanceID())
+                    {
+                        otherPathFollow.CarBehindThisCarIsFollowingTheSamePath = true;
+                    }
                 }
             }
         }
@@ -33,9 +36,13 @@ public class CarColliderCheck : MonoBehaviour
         {
             if (other.transform.parent.tag == _tag[i])
             {
+                PathFollow otherPathFollow = other.transform.GetComponentInParent<PathFollow>();
                 _isActive[i] = false;
-                other.transform.GetComponentInParent<PathFollow>().CarBehindThisCarIsFollowingTheSamePath = false;
-                //other.transform.GetComponentInParent<PathFollow>().CarIsCloselyFollowedByOtherCar = false;
+
+                if(otherPathFollow)
+                {
+                    otherPathFollow.CarBehindThisCarIsFollowingTheSamePath = false;
+                }
             }
         }
     }
