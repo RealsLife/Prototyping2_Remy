@@ -85,7 +85,7 @@ public class CarSpawnerBehaviour : MonoBehaviour
     {
         if (other.transform.parent.CompareTag("Car"))
         {
-            Debug.Log("CAR EXIT");
+            //Debug.Log("CAR EXIT");
             _isAbleToSpawnCars = true;
         }
     }

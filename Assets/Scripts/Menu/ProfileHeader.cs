@@ -13,15 +13,15 @@ public class ProfileHeader : MonoBehaviour
     //[SerializeField] private TextMeshPro _playerNameTextField;
     private void Start()
     {
-        _playerNameTextField.text = ProfileSaver._playerProfile._name;
-        if (ProfileSaver._playerProfile._gender == 0)
-        {
-            _genderField.text = "Jongen";
-        }
-        else
-        {
-            _genderField.text = "Meisje";
-        }
+        //_playerNameTextField.text = ProfileSaver._playerProfile._name;
+        //if (ProfileSaver._playerProfile._gender == 0)
+        //{
+        //    _genderField.text = "Jongen";
+        //}
+        //else
+        //{
+        //    _genderField.text = "Meisje";
+        //}
        
     }
 }

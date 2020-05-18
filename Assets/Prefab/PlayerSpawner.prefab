@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8fed6b23096bd49a4a0d8d0f0c2206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PlayerPrefab: {fileID: 2772712881614228996, guid: 29642339ce604604785498dc945917e5,
+  _PlayerPrefabBoy: {fileID: 2772712881614228996, guid: 29642339ce604604785498dc945917e5,
+    type: 3}
+  _PlayerPrefabGirl: {fileID: 2772712881614228996, guid: 1cfe174f79e9d064d932808d493b667d,
     type: 3}
   _HasEnteredTile: 1

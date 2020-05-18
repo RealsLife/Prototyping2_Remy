@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.014194, y: 1, z: 1}
-  m_Center: {x: 0.0656693, y: 0, z: 0.5}
+  m_Size: {x: 0.5, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!114 &8801853223704161847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6232408464443638079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 3}
+  m_LocalPosition: {x: 0, y: 0.5, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6232408463811229424}
@@ -167,8 +167,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 1}
+  m_Size: {x: 0.25, y: 1, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0.75}
 --- !u!114 &6232408464443638074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7063146779983357922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.2}
+  m_LocalPosition: {x: 0, y: 0, z: -2.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2846242381735620401}
@@ -288,7 +288,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 4.5}
-  m_Center: {x: 0, y: 1, z: 0.000000834465}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7063146781578568775
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38303c1e6d03614d9a4da546303b1d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentPathToFollow: {fileID: 0}
   _distanceTravelledOnCurrentPath: 0
   _pathTimeGoesFrom0To1: 1
   _distanceTravelledOnCurrentPathIsSet: 0
@@ -372,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fecaeb55888b57459676095b24714cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 8
   _carCheck: {fileID: 6232408464443638074}
   _trafficLightDetection_Close: {fileID: 8801853223704161847}
   _trafficLightDetection_Far: {fileID: 1997285087900534937}
@@ -420,7 +419,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 4}
+  m_Size: {x: 1.5, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 2}
 --- !u!114 &3334976666968193008
 MonoBehaviour:

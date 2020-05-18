@@ -9,9 +9,25 @@ public class PathFollow : MonoBehaviour
 {
     private float _speed;
 
-    public PathCreator _currentPathToFollow;
+    public bool CarIsCloselyFollowedByOtherCar { get; set; }
+    public bool CarBehindThisCarIsFollowingTheSamePath { get; set; }
+    public PathCreator CurrentPathTheCarIsFollowing 
+    { 
+        get 
+        {
+            if (_currentPathToFollow != null)
+            {   
+                return _currentPathToFollow;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
+    private PathCreator _currentPathToFollow;
     public float _distanceTravelledOnCurrentPath;
-
+    private float _currentPathLength = 0;
     public bool _pathTimeGoesFrom0To1 = true;
     public bool _distanceTravelledOnCurrentPathIsSet = false;
 
@@ -48,8 +64,13 @@ public class PathFollow : MonoBehaviour
 
     private void DestroyCarOnTileExit()
     {
+        if(_currentPathToFollow != null)
+        {
+            _currentPathLength = _currentPathToFollow.path.length;
+        }
+        
         //if (_distanceTravelledOnCurrentPath < -.5f || _distanceTravelledOnCurrentPath > 46.5f)
-        if(_distanceTravelledOnCurrentPath > _currentPathToFollow.path.length + .4f && _pathTimeGoesFrom0To1 || _distanceTravelledOnCurrentPath < -.4f && !_pathTimeGoesFrom0To1)
+        if (_distanceTravelledOnCurrentPath > _currentPathLength + .3f && _pathTimeGoesFrom0To1 || _distanceTravelledOnCurrentPath < -.3f && !_pathTimeGoesFrom0To1)
         {
             if(_destroyTriggered == false)
             {
@@ -57,7 +78,7 @@ public class PathFollow : MonoBehaviour
                 //setting the position of the car far away before destroying it triggers OnTriggerExit(), which is a solution to a bug causing cars to stop driving if they immediately drive behind a car which is getting destroyed
                 CarSpawnerOrigin.DecreaseAmountOfCars();
                 _currentPathToFollow = null;
-                GameObject.Destroy(this.gameObject, .1f);
+                GameObject.Destroy(this.gameObject, .01f);
                 _destroyTriggered = true;
             }
         }
