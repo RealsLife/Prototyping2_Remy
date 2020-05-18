@@ -12,6 +12,7 @@ public class CarBehaviour : MonoBehaviour
     private float _maxSpeed;
 
     [SerializeField] private CarColliderCheck _carCheck;
+    [SerializeField] private CarToPlayerColliderCheck _playerCheck;
     [SerializeField] private TrafficLightDetection _trafficLightDetection_Close;
     [SerializeField] private TrafficLightDetection _trafficLightDetection_Far;
     [SerializeField] private GameObject _carPriorityChecker;
@@ -45,6 +46,7 @@ public class CarBehaviour : MonoBehaviour
         //_isPlayerInRange = _player_TrafficLightCheck._isActive[0];
 
         _isCarInRange = _carCheck._isActive[0];
+        _isPlayerInRange = _playerCheck.IsTriggered;
         //_isTrafficLightRedClose = _player_TrafficLightCheckClose._isActive[1];
         //_isTrafficLightRed = _player_TrafficLightCheck._isActive[1];
 
@@ -55,19 +57,19 @@ public class CarBehaviour : MonoBehaviour
     {
         if (_speed <= 0.1) _speed = 0;
 
-        if ( _isStoppingTrafficLightNearby || _isCarInRange || _isGivingPriority)
+        if ( _isStoppingTrafficLightNearby || _isCarInRange || _isGivingPriority || _isPlayerInRange)
         {
             Stop();
         }
-        else if (_isPlayerInRange)
-        {
-            _speed -= _maxSpeed / 5 * Time.deltaTime;
+        //else if (_isPlayerInRange)
+        //{
+        //    _speed -= _maxSpeed / 5 * Time.deltaTime;
 
-            if (_isPlayerClose)
-            {
-                _speed -= _maxSpeed / 2 * Time.deltaTime;
-            }
-        }
+        //    if (_isPlayerClose)
+        //    {
+        //        _speed -= _maxSpeed / 2 * Time.deltaTime;
+        //    }
+        //}
 
         else
         {
