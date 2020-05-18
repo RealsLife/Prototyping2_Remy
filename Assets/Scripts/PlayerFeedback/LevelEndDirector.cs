@@ -50,8 +50,10 @@ public class LevelEndDirector : MonoBehaviour
             PlayerScore += subjectHandler.ScorePenalty;
             PlayerScore = Mathf.Max(PlayerScore, 0);
         }
+
         Debug.Log(PlayerScore);
         checkForTrophie();
+        checkForLevelUnlock();
 
         UILevelEndFeedback.UpdateFeedbackTextField(feedbackPositive, feedbackNegative, PlayerScore);
         UILevelEndFeedback.gameObject.SetActive(true);
@@ -67,6 +69,14 @@ public class LevelEndDirector : MonoBehaviour
         }
     }
 
+    private void checkForLevelUnlock()
+    {
+       if(_hasGottenTrophie == true)
+        {
+            LevelManager.UnlockNewLevel(2);
+        }
+    }
+
     public void ReactivateControlls()
     {
         PauseMenu._isGamePauzed = false;
@@ -76,5 +86,6 @@ public class LevelEndDirector : MonoBehaviour
     public void ResetDirector()
     {
         PlayerScore = 10;
+        _hasGottenTrophie = false;
     }
 }
