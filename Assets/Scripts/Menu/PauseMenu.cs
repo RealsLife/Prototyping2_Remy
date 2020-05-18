@@ -37,9 +37,4 @@ public class PauseMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void ReactivateControlls()
-    {
-        PauseMenu._isGamePauzed = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
 }

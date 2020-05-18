@@ -13,6 +13,8 @@ public class LevelEndDirector : MonoBehaviour
 
     public UIPopup UIPopup;
 
+    private bool _hasGottenTrophie = false;
+
     private void Start()
     {       
         //when a new tile is manually generated, feedback isn't added because it hasn't done FindChallenges() again
@@ -48,9 +50,21 @@ public class LevelEndDirector : MonoBehaviour
             PlayerScore += subjectHandler.ScorePenalty;
             PlayerScore = Mathf.Max(PlayerScore, 0);
         }
+        Debug.Log(PlayerScore);
+        checkForTrophie();
 
         UILevelEndFeedback.UpdateFeedbackTextField(feedbackPositive, feedbackNegative, PlayerScore);
         UILevelEndFeedback.gameObject.SetActive(true);
+    }
+
+    private void checkForTrophie()
+    {
+        if (PlayerScore >= 8 && !_hasGottenTrophie)
+        {
+            Debug.Log("player earned trophie");
+            PlayerProfiles._trophies += 1;
+            _hasGottenTrophie = true;
+        }
     }
 
     public void ReactivateControlls()
