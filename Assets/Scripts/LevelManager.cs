@@ -33,17 +33,11 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public static void UnlockNewLevel(string sceneName)
+    public static void UnlockNewLevel(int level)
     {
-        for(int i =0; i < 8; i++)
+        if (level + 1 > _levelsUnlocked)
         {
-            string nr = i.ToString();
-        
-            if (sceneName == "TrafficSituation_0"+nr)
-            {
-                Debug.Log("TrafficSituation_0" + nr);
-                if (_levelsUnlocked < i+1) _levelsUnlocked = i+1;
-            }
-        }     
+            _levelsUnlocked = level;
+        }
     }
 }

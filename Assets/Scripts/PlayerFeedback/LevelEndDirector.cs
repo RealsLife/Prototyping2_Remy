@@ -1,5 +1,7 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class LevelEndDirector : MonoBehaviour
 {
@@ -13,18 +15,11 @@ public class LevelEndDirector : MonoBehaviour
 
     private bool _hasGottenTrophie = false;
 
-    private string _sceneName;
-
     private void Start()
     {       
         //when a new tile is manually generated, feedback isn't added because it hasn't done FindChallenges() again
         FindChallenges();
         AssignUIPopupToChallenges();
-    }
-
-    private void Update()
-    {
-        _sceneName = SceneManager.GetActiveScene().name;
     }
 
     private void FindChallenges()
@@ -78,7 +73,7 @@ public class LevelEndDirector : MonoBehaviour
     {
        if(_hasGottenTrophie == true)
         {
-            LevelManager.UnlockNewLevel(_sceneName);
+            LevelManager.UnlockNewLevel(2);
         }
     }
 
